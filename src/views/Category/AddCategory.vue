@@ -36,7 +36,7 @@
 </template>
 <script>
 const axios = require("axios");
-
+const sweetalert = require("sweetalert");
 export default {
   data() {
     return {
@@ -63,7 +63,12 @@ export default {
           "Conten-Type": "application/json",
         },
       })
-        .then(() => {})
+        .then(() => {
+          sweetalert({
+            text: "Category added Successfully",
+            icon: "success",
+          });
+        })
         .catch((err) => {
           console.log(err);
         });
