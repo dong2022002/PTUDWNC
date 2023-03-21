@@ -20,30 +20,17 @@
   </div>
 </template>
 <script>
-const axios = require("axios");
 import CategoryBox from "../../components/Category/CategoryBox";
 export default {
   components: {
     CategoryBox,
   },
+  props: ["categories"],
   data() {
-    return {
-      baseURL: "https://limitless-lake-55070.herokuapp.com",
-      categories: [],
-    };
+    return {};
   },
-  methods: {
-    async getCategories() {
-      await axios
-        .get(`${this.baseURL}/category/`)
-        .then((res) => (this.categories = res.data))
-        .catch((err) => console.log(err));
-      console.log(this.categories);
-    },
-  },
-  mounted() {
-    this.getCategories();
-  },
+  methods: {},
+  mounted() {},
 };
 </script>
 <style scoped></style>

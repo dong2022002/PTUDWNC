@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HomeView'
 import AddCategory from '../views/Category/AddCategory'
 import Category from '../views/Category/DataCategory'
-
 const routes = [{
         path: '/',
         name: 'home',
@@ -27,6 +26,8 @@ const routes = [{
         name: 'Category',
         component: Category,
     },
+
+
 
 ]
 
