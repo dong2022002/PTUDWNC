@@ -1,11 +1,11 @@
 <template>
   <footer class="section-footer bg-primary footer-dark">
     <div class="container">
-      <section class="footer-main padding-y">
+      <section class="footer-main">
         <div class="row">
           <aside class="col-12 col-sm-12 col-lg-3">
             <article class="me-lg-4">
-              <p class="mt-3">
+              <p class="mt-4">
                 © 2021- 2022 Templatemount. <br />
                 All rights reserved.
               </p>
@@ -32,10 +32,10 @@
           <aside class="col-6 col-sm-4 col-lg-2">
             <h6 class="title">Support</h6>
             <ul class="list-menu mb-4">
-              <li><a href="#"> Help center </a></li>
-              <li><a href="#"> Documents </a></li>
-              <li><a href="#"> Account restore </a></li>
-              <li><a href="#"> My Orders </a></li>
+              <li><a href="#" class="text-footer"> Help center </a></li>
+              <li><a href="#" class="text-footer"> Documents </a></li>
+              <li><a href="#" class="text-footer"> Account restore </a></li>
+              <li><a href="#" class="text-footer"> My Orders </a></li>
             </ul>
           </aside>
           <aside class="col-12 col-sm-12 col-lg-3">
@@ -60,7 +60,7 @@
       <section
         class="footer-bottom d-flex justify-content-lg-between border-top"
       >
-        <div>
+        <div class="">
           <i class="fab fa-lg fa-cc-visa"></i>
           <i class="fab fa-lg fa-cc-amex"></i>
           <i class="fab fa-lg fa-cc-mastercard"></i>
@@ -73,7 +73,7 @@
             data-bs-toggle="dropdown"
           >
             <img
-              src="../assets/images/flag-usa.webp"
+              src="../../assets/images/flag-usa.webp"
               class="me-2"
               height="20"
             />
@@ -104,7 +104,7 @@
       <figure class="itemside mb-4">
         <div class="aside">
           <img
-            src="../assets/images/items/14.webp"
+            src="../../assets/images/items/14.webp"
             class="border img-sm rounded"
           />
         </div>
@@ -121,7 +121,7 @@
       <figure class="itemside mb-4">
         <div class="aside">
           <img
-            src="../assets/images/items/2.webp"
+            src="../../assets/images/items/2.webp"
             class="border img-sm rounded"
           />
         </div>
@@ -138,7 +138,7 @@
       <figure class="itemside mb-4">
         <div class="aside">
           <img
-            src="../assets/images/items/11.webp"
+            src="../../assets/images/items/11.webp"
             class="border img-sm rounded"
           />
         </div>
@@ -160,10 +160,22 @@
         <a href="#" class="btn w-100 btn-success"> Checkout </a>
       </div>
       <p class="mb-3 text-center">
-        <img src="../assets/images/payments.webp" height="22" />
+        <img src="../../assets/images/payments.webp" height="22" />
       </p>
     </div>
     <!-- offcanvas-body -->
   </aside>
   <!-- offcanvas -->
 </template>
+
+<style scoped>
+.text-footer {
+  color: #fff;
+}
+.section-footer {
+  padding: 16px 0;
+}
+.fab {
+  padding: 0 4px;
+}
+</style>

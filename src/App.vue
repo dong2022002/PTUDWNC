@@ -1,12 +1,15 @@
 <template>
-  <HeaderView />
-  <router-view :to="{ name: 'home' }"></router-view>
-  <footer-view />
+  <div class="">
+    <HeaderView />
+    <router-view />
+    <footer-view />
+  </div>
 </template>
 
 <script>
-import HeaderView from "./views/HeaderView.vue";
-import FooterView from "./views/FooterView.vue";
+import HeaderView from "./views/Shared/HeaderView";
+import FooterView from "./views/Shared/FooterView";
+
 export default {
   components: {
     HeaderView: HeaderView,
