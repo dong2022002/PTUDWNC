@@ -47,20 +47,18 @@ export default {
   },
   methods: {
     addCategory() {
-      console.log(this.categoryName, this.description, this.imageUrl);
       const newCategory = {
         categoryName: this.categoryName,
         description: this.description,
         imageUrl: this.imageUrl,
       };
-
       const baseURL = "https://limitless-lake-55070.herokuapp.com";
       axios({
         method: "post",
         url: `${baseURL}/category/create`,
         data: JSON.stringify(newCategory),
-        Headers: {
-          "Conten-Type": "application/json",
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
         },
       })
         .then(() => {
