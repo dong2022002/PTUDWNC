@@ -1,25 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView/HomeView'
-import ProductView from '../views/products/ProductView'
-const routes = [{
-        path: '/',
-        name: 'home',
-        component: HomeView
-    },
-    {
-        path: '/product/',
-        name: 'Detail-product',
-        component: ProductView
-    },
-
-
-
-
-]
-
-const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+import { createRouter, createWebHistory } from 'vue-router';
+import admin from './admin.js';
+import user from './user'
+const routes = [...admin, ...user];
+console.log(routes)
+const routerView = createRouter({
+    history: createWebHistory(),
     routes
-})
+});
 
-export default router
+export default routerView;

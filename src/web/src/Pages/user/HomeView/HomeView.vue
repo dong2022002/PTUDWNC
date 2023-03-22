@@ -51,12 +51,12 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
-            <a href="/product/" class="img-wrap">
+            <a href="product" class="img-wrap">
               <span class="topbar">
                 <b class="badge bg-success"> Offer </b>
               </span>
               <img
-                src="../../assets/images/items/12.webp"
+                src="../../../assets/images/items/12.webp"
                 class="w-100 h-100"
               />
             </a>
@@ -82,7 +82,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
             <a href="#" class="img-wrap">
-              <img src="../../assets/images/items/11.webp" />
+              <img src="../../../assets/images/items/11.webp" />
             </a>
             <figcaption class="info-wrap border-top">
               <a href="#" class="float-end btn btn-light btn-icon">
@@ -100,7 +100,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
             <a href="#" class="img-wrap">
-              <img src="../../assets/images/items/10.webp" />
+              <img src="../../../assets/images/items/10.webp" />
             </a>
             <figcaption class="info-wrap border-top">
               <a href="#" class="float-end btn btn-light btn-icon">
@@ -120,7 +120,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
             <a href="#" class="img-wrap">
-              <img src="../../assets/images/items/9.webp" />
+              <img src="../../../assets/images/items/9.webp" />
             </a>
             <figcaption class="info-wrap border-top">
               <a href="#" class="float-end btn btn-light btn-icon">
@@ -140,7 +140,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
             <a href="#" class="img-wrap">
-              <img src="../../assets/images/items/5.webp" />
+              <img src="../../../assets/images/items/5.webp" />
             </a>
             <figcaption class="info-wrap border-top">
               <a href="#" class="float-end btn btn-light btn-icon">
@@ -160,7 +160,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
             <a href="#" class="img-wrap">
-              <img src="../../assets/images/items/6.webp" />
+              <img src="../../../assets/images/items/6.webp" />
             </a>
             <figcaption class="info-wrap border-top">
               <a href="#" class="float-end btn btn-light btn-icon">
@@ -180,7 +180,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
             <a href="#" class="img-wrap">
-              <img src="../../assets/images/items/7.webp" />
+              <img src="../../../assets/images/items/7.webp" />
             </a>
             <figcaption class="info-wrap border-top">
               <a href="#" class="float-end btn btn-light btn-icon">
@@ -200,7 +200,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <figure class="card card-product-grid">
             <a href="#" class="img-wrap">
-              <img src="../../assets/images/items/8.webp" />
+              <img src="../../../assets/images/items/8.webp" />
             </a>
             <figcaption class="info-wrap border-top">
               <a href="#" class="float-end btn btn-light btn-icon">
@@ -235,7 +235,7 @@
               <a class="btn btn-warning" href="#"> Claim offer </a>
             </div>
             <img
-              src="../../assets/images/banners/banner-item2.webp"
+              src="../../../assets/images/banners/banner-item2.webp"
               height="350"
               class="img-bg"
             />
@@ -302,7 +302,7 @@
               height="200"
               width="200"
               class="img-thumbnail"
-              src="../../assets/images/items/1.webp"
+              src="../../../assets/images/items/1.webp"
             />
           </a>
         </div>
@@ -313,7 +313,7 @@
               height="200"
               width="200"
               class="img-thumbnail"
-              src="../../assets/images/items/2.webp"
+              src="../../../assets/images/items/2.webp"
             />
           </a>
         </div>
@@ -324,7 +324,7 @@
               height="200"
               width="200"
               class="img-thumbnail"
-              src="../../assets/images/items/3.webp"
+              src="../../../assets/images/items/3.webp"
             />
           </a>
         </div>
@@ -335,7 +335,7 @@
               height="200"
               width="200"
               class="img-thumbnail"
-              src="../../assets/images/items/4.webp"
+              src="../../../assets/images/items/4.webp"
             />
           </a>
         </div>
@@ -346,7 +346,7 @@
               height="200"
               width="200"
               class="img-thumbnail"
-              src="../../assets/images/items/5.webp"
+              src="../../../assets/images/items/5.webp"
             />
           </a>
         </div>
@@ -357,7 +357,7 @@
               height="200"
               width="200"
               class="img-thumbnail"
-              src="../../assets/images/items/6.webp"
+              src="../../../assets/images/items/6.webp"
             />
           </a>
         </div>
