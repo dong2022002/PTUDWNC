@@ -13,12 +13,7 @@
       </div>
 
       <div
-        class="
-          col-10 col-sm-9
-          d-flex
-          align-items-center
-          justify-content-center justify-content-sm-start
-        "
+        class="col-10 col-sm-9 d-flex align-items-center justify-content-center justify-content-sm-start"
       >
         <img
           src="../assets/logo.png"
@@ -31,12 +26,7 @@
       </div>
 
       <div
-        class="
-          col-sm-3
-          d-none d-sm-flex
-          align-items-center
-          justify-content-sm-end
-        "
+        class="col-sm-3 d-none d-sm-flex align-items-center justify-content-sm-end"
       >
         <span>Admin</span>
       </div>
@@ -63,7 +53,7 @@
 </template>
 
 <script>
-import TheMenu from "../components/TheMenu.vue";
+import TheMenu from "../AdminComponets/TheMenu.vue";
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   components: {
