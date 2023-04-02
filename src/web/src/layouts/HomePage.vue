@@ -1,16 +1,17 @@
 <template>
-  <a-layout-sider>
+  <div class="">
     <the-header />
-  </a-layout-sider>
-  <a-layout-content>Content</a-layout-content>
-  <a-layout-footer>Footer</a-layout-footer>
+    Content
+    <FooterView />
+  </div>
 </template>
 <script>
 import TheHeader from "../components/UserComponents/TheHeader.vue";
-
+import FooterView from "../components/UserComponents/FooterView.vue";
 export default {
   components: {
     TheHeader,
+    FooterView,
   },
 };
 </script>
