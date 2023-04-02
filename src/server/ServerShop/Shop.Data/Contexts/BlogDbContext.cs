@@ -13,7 +13,7 @@ namespace TatBlog.Data.Contexts
         public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options)
         {
 
-        }U            //modelBuilder.ApplyConfigurationsFromAssembly(
+                  //modelBuilder.ApplyConfigurationsFromAssembly(
             //    typeof(CategoryMap).Assembly);
         }
     }
