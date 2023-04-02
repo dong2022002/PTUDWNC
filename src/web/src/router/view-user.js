@@ -1,13 +1,15 @@
 const userView = [{
     path: "/",
     component: () =>
-        import ("../layouts/HomePage.vue"),
+        import ("../layouts/user.vue"),
     children: [{
-            path: "*",
-            name: "404",
+
+            path: "/",
+            name: "HomePage",
             component: () =>
-                import ("../pages/ViewUser/404Page.vue")
+                import ("../pages/ViewUser/HomePage.vue")
         },
+
         {
 
             path: "product/:id",
