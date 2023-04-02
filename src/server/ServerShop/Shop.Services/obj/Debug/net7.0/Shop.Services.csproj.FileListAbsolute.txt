@@ -1,0 +1,17 @@
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.csproj.AssemblyReference.cache
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.AssemblyInfoInputs.cache
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.AssemblyInfo.cs
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.csproj.CoreCompileInputs.cache
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\bin\Debug\net7.0\Shop.Services.deps.json
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\bin\Debug\net7.0\Shop.Services.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\bin\Debug\net7.0\Shop.Services.pdb
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\bin\Debug\net7.0\Shop.Core.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\bin\Debug\net7.0\Shop.Data.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\bin\Debug\net7.0\Shop.Core.pdb
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\bin\Debug\net7.0\Shop.Data.pdb
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.csproj.CopyComplete
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\refint\Shop.Services.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\Shop.Services.pdb
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Services\obj\Debug\net7.0\ref\Shop.Services.dll

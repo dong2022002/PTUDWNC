@@ -1,0 +1,15 @@
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\bin\Debug\net7.0\Shop.Data.deps.json
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\bin\Debug\net7.0\Shop.Data.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\bin\Debug\net7.0\Shop.Data.pdb
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\bin\Debug\net7.0\Shop.Core.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\bin\Debug\net7.0\Shop.Core.pdb
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.csproj.AssemblyReference.cache
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.AssemblyInfoInputs.cache
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.AssemblyInfo.cs
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.csproj.CoreCompileInputs.cache
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.csproj.CopyComplete
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\refint\Shop.Data.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\Shop.Data.pdb
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.Data\obj\Debug\net7.0\ref\Shop.Data.dll
