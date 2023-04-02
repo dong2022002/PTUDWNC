@@ -12,7 +12,7 @@ const userView = [{
 
         {
 
-            path: "product/:id",
+            path: "product",
             name: "product",
             component: () =>
                 import ("../pages/ViewUser/ProductPage.vue")
