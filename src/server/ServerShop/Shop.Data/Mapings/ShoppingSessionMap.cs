@@ -11,14 +11,6 @@ namespace Shop.Data.Mapings
 {
 	public class ShoppingSessionMap : IEntityTypeConfiguration<ShoppingSession>
 	{
-		//public int Id { get; set; }
-		//public double total { get; set; }
-		//public int MyProperty { get; set; }
-
-		//public int UserId { get; set; }
-		//public User User { get; set; }
-
-		//public IList<CartItem> Carts { get; set; }
 		public void Configure(EntityTypeBuilder<ShoppingSession> builder)
 		{
 			builder.ToTable("ShoppingSession");
@@ -27,7 +19,10 @@ namespace Shop.Data.Mapings
 
 			builder.Property(x => x.total)
 				.HasDefaultValue(0);
-
+			builder.Property(x => x.CreatedAt)
+				.HasColumnType("datetime");
+			builder.Property(x => x.ModifiedAt)
+				.HasColumnType("datetime");
 
 			builder.HasOne(x => x.User)
 				.WithMany(x => x.ShoppingSessions)

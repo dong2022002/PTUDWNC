@@ -13,5 +13,7 @@ namespace Shop.Core.Entities
         public string Permissisons { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public DateTime? ModifiedAt { get; set; }
-	}
+
+        public IList<AdminUser> AdminUsers { get; set; }
+    }
 }

@@ -12,7 +12,7 @@ namespace Shop.Core.Entities
         public double Total { get; set; }
 
 		public DateTime CreatedAt { get; set; }
-		public DateTime ModifiedAt { get; set; }
+		public DateTime? ModifiedAt { get; set; }
         public int UserId { get; set; }
         public int PaymentId { get; set; }
 

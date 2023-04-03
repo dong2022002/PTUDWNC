@@ -53,11 +53,7 @@ namespace Shop.Data.Mapings
 				.HasConstraintName("FK_Discount_Products")
 				.OnDelete(DeleteBehavior.Cascade);
 
-			builder.HasOne(x => x.ProductInventory)
-				.WithOne(x => x.Product)
-				.HasForeignKey<Product>(x => x.InventoryId)
-				.HasConstraintName("FK_ProductInventory_Product")
-				.OnDelete(DeleteBehavior.Cascade);
+		
 		}
 	}
 }

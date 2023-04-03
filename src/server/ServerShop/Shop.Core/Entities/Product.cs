@@ -14,8 +14,8 @@ namespace Shop.Core.Entities
         public string SKU { get; set; }
         public double Price { get; set; }
 		public DateTime CreatedAt { get; set; }
-		public DateTime ModifiedAt { get; set; }
-		public DateTime DeletedAt { get; set; }
+		public DateTime? ModifiedAt { get; set; }
+		public DateTime? DeletedAt { get; set; }
 
         public int CategoryId { get; set; }
         public int InventoryId { get; set; }

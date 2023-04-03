@@ -33,11 +33,7 @@ namespace Shop.Data.Mapings
 			builder.Property(x => x.ModifiedAt)
 				.HasColumnType("datetime");
 
-			builder.HasOne(x => x.OrderDetail)
-				.WithOne(x => x.PaymentDetail)
-				.HasForeignKey<PaymentDetail>(x => x.OrderId)
-				.HasConstraintName("FK_PaymentDetail_OrderDetail")
-				.OnDelete(DeleteBehavior.Cascade);
+			
 		}
 	}
 }
