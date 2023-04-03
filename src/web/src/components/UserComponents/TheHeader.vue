@@ -71,26 +71,18 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbar_main">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link ps-0" href="#"> Categories </a>
+            <ul
+              class="navbar-nav"
+              v-for="(menu, index) in menuNav"
+              :key="index"
+            >
+              <li class="nav-item" v-if="!menu.submenu">
+                <a class="nav-link ps-4" :href="menu.slug">
+                  {{ menu.name }}
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Hot offers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Gift boxes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Menu item</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Menu name</a>
-              </li>
-              <li class="nav-item dropdown">
+              <!-- sub menu -->
+              <li class="nav-item dropdown" v-else>
                 <a
                   class="nav-link dropdown-toggle"
                   id="navbarDarkDropdownMenuLink"
@@ -98,20 +90,36 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  {{ menu.name }}
                 </a>
                 <ul
                   class="dropdown-menu dropdown-menu-dark"
                   aria-labelledby="navbarDarkDropdownMenuLink"
                 >
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                  <li
+                    class="nav-item"
+                    v-for="(subMenu, index) in menu.dataSubMenus"
+                    :key="index"
+                  >
+                    <a class="dropdown-item" :href="subMenu.slug">{{
+                      subMenu.name
+                    }}</a>
                   </li>
                 </ul>
               </li>
-            </ul>
+
+              <!--
+              <li class="nav-item">
+                <a class="nav-link" href="#">Linh kiện PC</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Linh kiện</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Menu name</a>
+              </li>
+            
+            --></ul>
           </div>
           <!-- collapse end.// -->
         </div>
@@ -124,6 +132,89 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      menuNav: [
+        {
+          name: "Laptop",
+          slug: "laptop",
+          submenu: true,
+          dataSubMenus: [
+            {
+              name: "Laptop Mới",
+              slug: "new-laptop",
+            },
+            {
+              name: "Laptop Cũ",
+              slug: "old-laptop",
+            },
+          ],
+        },
+        {
+          name: "Máy tính bàn",
+          slug: "may-tinh-ban",
+          submenu: false,
+          dataSubMenus: [],
+        },
+        {
+          name: "Link kiện PC",
+          slug: "linh-kien",
+          submenu: true,
+          dataSubMenus: [
+            {
+              name: "CPU",
+              slug: "linh-kien-cpu",
+            },
+            {
+              name: "RAM",
+              slug: "linh-kien-ram",
+            },
+            {
+              name: "SDD",
+              slug: "linh-kien-sdd",
+            },
+          ],
+        },
+        {
+          name: "Link kiện Laptop",
+          slug: "linh-kien-laptop",
+          submenu: true,
+          dataSubMenus: [
+            {
+              name: "CPU",
+              slug: "linh-kien-cpu",
+            },
+            {
+              name: "RAM",
+              slug: "linh-kien-ram",
+            },
+            {
+              name: "SDD",
+              slug: "linh-kien-sdd",
+            },
+          ],
+        },
+        {
+          name: "Bàn, ghế Gaming",
+          slug: "ban-ghe-gaming",
+          submenu: false,
+          dataSubMenus: [],
+        },
+        {
+          name: "dịch vụ",
+          slug: "dịch vụ",
+          submenu: false,
+          dataSubMenus: [],
+        },
+        {
+          name: "liên hệ",
+          slug: "lien-he",
+          submenu: false,
+          dataSubMenus: [],
+        },
+      ],
+    };
+  },
   setup() {},
 };
 </script>
