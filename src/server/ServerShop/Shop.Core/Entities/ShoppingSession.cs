@@ -10,11 +10,13 @@ namespace Shop.Core.Entities
 	{
         public int Id { get; set; }
         public double total { get; set; }
-        public int MyProperty { get; set; }
+		public DateTime CreatedAt { get; set; }
+		public DateTime? ModifiedAt { get; set; }
 
-        public int UserId { get; set; }
+		public int UserId { get; set; }
         public User User { get; set; }
 
         public IList<CartItem> Carts { get; set; }
+
     }
 }

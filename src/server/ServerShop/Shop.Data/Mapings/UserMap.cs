@@ -11,6 +11,7 @@ namespace Shop.Data.Mapings
 {
 	public class UserMap : IEntityTypeConfiguration<User>
 	{
+		
 		public void Configure(EntityTypeBuilder<User> builder)
 		{
 			builder.ToTable("Users");

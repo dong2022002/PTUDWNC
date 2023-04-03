@@ -12,9 +12,8 @@ namespace Shop.Core.Entities
 		public string PaymentType { get; set; }
 		public string Provider { get; set; }
 		public int AccountNo { get; set; }
-		public DateTime Expiry { get; set; }
+		public DateTime? Expiry { get; set; }
         public int UseId { get; set; }
-
         public User User { get; set; }
 	}
 }

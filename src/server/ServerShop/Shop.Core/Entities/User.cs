@@ -15,13 +15,14 @@ namespace Shop.Core.Entities
         public string LastName { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
-        public DateTime? CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set;}
 
 		public IList<UserPayment> UserPayments { get; set; }
 
         public OrderDetail OrderDetail { get; set; }
-        public ShoppingSession ShoppingSession { get; set; }
+		public IList<ShoppingSession> ShoppingSessions { get; set; }
 
-    }
+
+	}
 }

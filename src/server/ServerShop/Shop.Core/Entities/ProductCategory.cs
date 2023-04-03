@@ -11,9 +11,9 @@ namespace Shop.Core.Entities
 		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }
-		public DateTime Created_at { get; set; }
-		public DateTime Modified_at { get; set; }
-		public DateTime Deleted_at { get; set; }
+		public DateTime CreatedAt { get; set; }
+		public DateTime? ModifiedAt { get; set; }
+		public DateTime? DeletedAt { get; set; }
 
         public IList<Product> Products { get; set; }
     }
