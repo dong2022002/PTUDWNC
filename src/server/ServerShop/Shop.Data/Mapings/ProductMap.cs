@@ -43,7 +43,7 @@ namespace Shop.Data.Mapings
 
 			builder.HasOne(x => x.ProductCategory)
 				.WithMany(x => x.Products)
-				.HasForeignKey(x => x.CategoryId)
+				.HasForeignKey(x => x.ProductCategoryId)
 				.HasConstraintName("FK_ProductCategory_Products")
 				.OnDelete(DeleteBehavior.Cascade);
 

@@ -17,7 +17,7 @@ namespace Shop.Core.Entities
 		public DateTime? ModifiedAt { get; set; }
 		public DateTime? DeletedAt { get; set; }
 
-        public int CategoryId { get; set; }
+        public int ProductCategoryId { get; set; }
         public int InventoryId { get; set; }
         public int DiscountId { get; set; }
 

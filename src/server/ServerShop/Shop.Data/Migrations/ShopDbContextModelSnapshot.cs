@@ -109,10 +109,7 @@ namespace Shop.Data.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("SessionId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ShoppingSessionId")
+                    b.Property<int>("ShoppingSessionId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -207,10 +204,7 @@ namespace Shop.Data.Migrations
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("OrderDetailId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
+                    b.Property<int>("OrderDetailId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
@@ -268,9 +262,6 @@ namespace Shop.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -295,7 +286,7 @@ namespace Shop.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("ProductCategoryId")
+                    b.Property<int>("ProductCategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("SKU")
@@ -450,10 +441,7 @@ namespace Shop.Data.Migrations
                     b.Property<string>("Provider")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UseId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -482,7 +470,9 @@ namespace Shop.Data.Migrations
 
                     b.HasOne("Shop.Core.Entities.ShoppingSession", "ShoppingSession")
                         .WithMany("Carts")
-                        .HasForeignKey("ShoppingSessionId");
+                        .HasForeignKey("ShoppingSessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Product");
 
@@ -512,7 +502,9 @@ namespace Shop.Data.Migrations
                 {
                     b.HasOne("Shop.Core.Entities.OrderDetail", "OrderDetail")
                         .WithMany("OrderItems")
-                        .HasForeignKey("OrderDetailId");
+                        .HasForeignKey("OrderDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Shop.Core.Entities.Product", "Product")
                         .WithOne("OrderItem")
@@ -541,7 +533,9 @@ namespace Shop.Data.Migrations
 
                     b.HasOne("Shop.Core.Entities.ProductCategory", "ProductCategory")
                         .WithMany("Products")
-                        .HasForeignKey("ProductCategoryId");
+                        .HasForeignKey("ProductCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Discount");
 
@@ -565,7 +559,9 @@ namespace Shop.Data.Migrations
                 {
                     b.HasOne("Shop.Core.Entities.User", "User")
                         .WithMany("UserPayments")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

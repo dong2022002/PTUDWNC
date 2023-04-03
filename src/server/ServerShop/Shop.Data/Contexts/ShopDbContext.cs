@@ -43,7 +43,17 @@ namespace TatBlog.Data.Contexts
 			modelBuilder.Entity<ProductInventory>()
 				.HasOne(a => a.Product).WithOne(b => b.ProductInventory)
 				.HasForeignKey<Product>(e => e.InventoryId);
-			
+
+			modelBuilder.ApplyConfigurationsFromAssembly(
+			   typeof(Product).Assembly);
+			modelBuilder.ApplyConfigurationsFromAssembly(
+			   typeof(CartItem).Assembly);
+			modelBuilder.ApplyConfigurationsFromAssembly(
+			   typeof(OrderDetail).Assembly);
+			modelBuilder.ApplyConfigurationsFromAssembly(
+			   typeof(OrderItem).Assembly);
+			modelBuilder.ApplyConfigurationsFromAssembly(
+			   typeof(UserPayment).Assembly);
 
 		}
 
