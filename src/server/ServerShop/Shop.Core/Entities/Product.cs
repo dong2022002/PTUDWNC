@@ -24,7 +24,7 @@ namespace Shop.Core.Entities
         public CartItem CartItem { get; set; }
         public ProductInventory ProductInventory { get; set; }
         public Discount Discount { get; set; }
-
+        public ProductCategory ProductCategory { get; set; }
         public OrderItem OrderItem { get; set; }
     }
 }

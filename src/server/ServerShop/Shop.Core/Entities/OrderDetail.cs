@@ -19,6 +19,6 @@ namespace Shop.Core.Entities
         public PaymentDetail PaymentDetail { get; set; }
         public User User { get; set; }
 
-        public OrderItem OrderItem { get; set; }
+        public IList<OrderItem> OrderItems { get; set; }
     }
 }
