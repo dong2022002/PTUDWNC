@@ -1,88 +1,26 @@
 <template>
-  <div class="">
-    <header class="section-header">
-      <section class="header-main">
-        <div class="container">
-          <div class="row gy-3 pt-2 pb-2 align-items-center">
-            <div class="col-lg-2 col-sm-4 col-4">
-              <a href="/" class="navbar-brand"> RichEcom </a>
-              <!-- brand end.// -->
-            </div>
-            <div class="order-lg-last col-lg-5 col-sm-8 col-8">
-              <div class="float-end">
-                <a href="#" class="btn btn-light me-2">
-                  <i class="fa fa-user"></i>
-                  <span class="ms-1 d-none d-sm-inline-block">Sign in </span>
-                </a>
-                <a href="#" class="btn btn-light me-2">
-                  <i class="fa fa-heart"></i>
-                  <span class="ms-1 d-none d-sm-inline-block">Wishlist</span>
-                </a>
-                <a
-                  data-bs-toggle="offcanvas"
-                  href="#offcanvas_cart"
-                  class="btn btn-primary"
-                >
-                  <i class="fa fa-shopping-cart"></i>
-                  <span class="ms-1">My cart </span>
-                </a>
-              </div>
-            </div>
-            <!-- col end.// -->
-            <div class="col-lg-5 col-md-12 col-12">
-              <form action="#" class="">
-                <div class="input-group">
-                  <input
-                    type="search"
-                    class="form-control"
-                    style="width: 55%"
-                    placeholder="Search"
-                  />
-                  <select class="form-select">
-                    <option value="">All type</option>
-                    <option value="codex">Special</option>
-                    <option value="comments">Only best</option>
-                    <option value="content">Latest</option>
-                  </select>
-                  <button class="btn btn-primary">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-                <!-- input-group end.// -->
-              </form>
-            </div>
-            <!-- col end.// -->
-          </div>
-          <!-- row end.// -->
-        </div>
-        <!-- container end.// -->
-      </section>
-      <!-- header-main end.// -->
-
-      <nav class="navbar navbar-light bg-primary border-top navbar-expand-lg">
-        <div class="container">
-          <button
-            class="navbar-toggler border"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar_main"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbar_main">
-            <ul
+      <nav class="navbar shadow mb-2 navbar-expand-lg navbar-light bg-light ">
+  <div class="container-fluid d-flex">
+    <div class="p-2 flex-grow-1 bd-highlight">
+      <a class="navbar-brand" href="#">Navbar</a>
+    </div>
+    <div class="p-2 bd-highlight">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" >
+      <ul
               class="navbar-nav"
               v-for="(menu, index) in menuNav"
               :key="index"
             >
               <li class="nav-item" v-if="!menu.submenu">
-                <a class="nav-link ps-4" :href="menu.slug">
+                <a class="nav-link ps-4 fs-6" :href="menu.slug">
                   {{ menu.name }}
                 </a>
               </li>
               <!-- sub menu -->
-              <li class="nav-item dropdown" v-else>
+              <li class="nav-item dropdown position-relative" v-else>
                 <a
                   class="nav-link dropdown-toggle"
                   id="navbarDarkDropdownMenuLink"
@@ -93,11 +31,10 @@
                   {{ menu.name }}
                 </a>
                 <ul
-                  class="dropdown-menu dropdown-menu-dark"
-                  aria-labelledby="navbarDarkDropdownMenuLink"
+                  class="dropdown-menu mt-3 border border-white shadow-sm  bg-body rounded"
                 >
                   <li
-                    class="nav-item"
+                    class="nav-item fs-6"
                     v-for="(subMenu, index) in menu.dataSubMenus"
                     :key="index"
                   >
@@ -107,28 +44,39 @@
                   </li>
                 </ul>
               </li>
+           </ul>
+    </div>
+    </div>
+    <!-- Search -->
+    <div class="p-2 bd-highlight ">
+      <form class="d-flex justify-content-evenly ">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline search-dark" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="order-lg-last">
+              <div class="float-end">
+                <a href="#" class="btn  me-2">
+                  <i class="fa fa-user purple"></i>
+                  <span class="ms-1 d-none d-sm-inline-block"></span>
+                </a>
+                <a href="#" class="btn  me-2 cart-button">
+                  <i class="fa fa-heart purple"></i>
+                  <span class="ms-1 d-none d-sm-inline-block"></span>
+                </a>
+                <a
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvas_cart"
+                  class="btn dark "
+                >
+                  <i class="fa fa-shopping-cart"></i>
+                  <span class="ms-1"> </span>
+                </a>
+              </div>
+            </div>
 
-              <!--
-              <li class="nav-item">
-                <a class="nav-link" href="#">Linh kiện PC</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Linh kiện</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Menu name</a>
-              </li>
-            
-            --></ul>
-          </div>
-          <!-- collapse end.// -->
-        </div>
-        <!-- container end.// -->
-      </nav>
-      <!-- navbar end.// -->
-    </header>
-    <!-- section-header end.// -->
   </div>
+</nav>
 </template>
 <script>
 export default {
@@ -136,79 +84,43 @@ export default {
     return {
       menuNav: [
         {
-          name: "Laptop",
-          slug: "laptop",
+          name: "Trang chủ",
+          slug: "home",
+          submenu: false,
+          dataSubMenus: [
+
+          ],
+        },
+        {
+          name: "Cửa hàng",
+          slug: "shop",
           submenu: true,
           dataSubMenus: [
             {
-              name: "Laptop Mới",
-              slug: "new-laptop",
+              name: "LapTop",
+              slug: "lap-top",
             },
             {
-              name: "Laptop Cũ",
-              slug: "old-laptop",
+              name: "Máy tính bàn",
+              slug: "may-tinh-ban",
+            },
+            {
+              name: "ổ cứng SSD",
+              slug: "o-cung-ssd",
             },
           ],
         },
         {
-          name: "Máy tính bàn",
-          slug: "may-tinh-ban",
+          name: "CSKH",
+          slug: "cskh",
           submenu: false,
-          dataSubMenus: [],
-        },
-        {
-          name: "Link kiện PC",
-          slug: "linh-kien",
-          submenu: true,
           dataSubMenus: [
-            {
-              name: "CPU",
-              slug: "linh-kien-cpu",
-            },
-            {
-              name: "RAM",
-              slug: "linh-kien-ram",
-            },
-            {
-              name: "SDD",
-              slug: "linh-kien-sdd",
-            },
+
           ],
         },
         {
-          name: "Link kiện Laptop",
-          slug: "linh-kien-laptop",
-          submenu: true,
-          dataSubMenus: [
-            {
-              name: "CPU",
-              slug: "linh-kien-cpu",
-            },
-            {
-              name: "RAM",
-              slug: "linh-kien-ram",
-            },
-            {
-              name: "SDD",
-              slug: "linh-kien-sdd",
-            },
-          ],
-        },
-        {
-          name: "Bàn, ghế Gaming",
-          slug: "ban-ghe-gaming",
-          submenu: false,
-          dataSubMenus: [],
-        },
-        {
-          name: "dịch vụ",
-          slug: "dịch vụ",
-          submenu: false,
-          dataSubMenus: [],
-        },
-        {
-          name: "liên hệ",
-          slug: "lien-he",
+          name: "Theo dõi đơn hàng",
+          slug: "theo-doi-don-hang",
           submenu: false,
           dataSubMenus: [],
         },
@@ -220,17 +132,24 @@ export default {
 </script>
 
 <style>
-.dropdown-submenu {
-  position: relative;
+.dark{
+  color: var(--dark);
+  border-color: var(--dark)
+}
+.search-dark{
+  color: var(--dark);
+  border-color: var(--dark)
+}
+.dark:hover{
+  opacity:0.8;
+  border-color: var(--dark)
+
+}
+.search-dark:hover{
+  border-color: var(--dark)
 }
 
-.dropdown-submenu .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-}
 
-.navbar-nav li:hover > ul.dropdown-menu {
-  display: block;
-}
+
+
 </style>

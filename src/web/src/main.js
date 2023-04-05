@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import "./assets/styles/global.css"
 import router from './router/index.js'
 import axios from 'axios'
 window.axios = axios;

@@ -1,12 +1,12 @@
 <template>
-  <footer class="section-footer bg-primary footer-dark">
+  <footer class="section-footer bg-secondary footer-dark">
     <div class="container">
       <section class="footer-main">
         <div class="row">
           <aside class="col-12 col-sm-12 col-lg-3">
             <article class="me-lg-4">
               <p class="mt-4">
-                © 2021- 2022 Templatemount. <br />
+                © 2022- 2023  <br />
                 All rights reserved.
               </p>
             </article>
@@ -14,7 +14,7 @@
           <aside class="col-6 col-sm-4 col-lg-2">
             <h6 class="title">Store</h6>
             <ul class="list-menu mb-4">
-              <li><a href="#">About us</a></li>
+              <li><a class="text-white" href="#">About us</a></li>
               <li><a href="#">Find store</a></li>
               <li><a href="#">Categories</a></li>
               <li><a href="#">Blogs</a></li>
@@ -38,7 +38,7 @@
               <li><a href="#" class="text-footer"> My Orders </a></li>
             </ul>
           </aside>
-          <aside class="col-12 col-sm-12 col-lg-3">
+          <!-- <aside class="col-12 col-sm-12 col-lg-3">
             <h6 class="title">Newsletter</h6>
             <p>
               Stay in touch with latest updates about our products and offers
@@ -49,9 +49,8 @@
                 <input class="form-control" type="text" placeholder="Email" />
                 <button class="btn btn-light" type="submit">Join</button>
               </div>
-              <!-- input-group.// -->
             </form>
-          </aside>
+          </aside> -->
         </div>
         <!-- row.// -->
       </section>

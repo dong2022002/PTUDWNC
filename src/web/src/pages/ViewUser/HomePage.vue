@@ -4,12 +4,14 @@
     <div class="container">
       <main class="card p-3">
         <div class="row">
-          <aside class="col-lg-3">
+          <aside class="col-lg-2">
             <nav class="nav flex-column nav-pills">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link active " aria-current="page" href="#"
+                >Danh mục sản phẩm</a>
+              <a class="nav-link" aria-current="page" href="#"
                 >Electronics</a
               >
-              <a class="nav-link" href="#">Clothes and wear</a>
+              <a class="nav-link text-black" href="#">Clothes and wear</a>
               <a class="nav-link" href="#">Home interiors</a>
               <a class="nav-link" href="#">Computer and tech</a>
               <a class="nav-link" href="#">Tools, equipments</a>
@@ -19,14 +21,14 @@
               <a class="nav-link" href="#">Other products</a>
             </nav>
           </aside>
-          <div class="col-lg-9">
-            <article class="card-banner p-5 bg-primary" style="height: 360px">
+          <div class="col-lg-10">
+            <article class="card-banner p-5 bg-image" style="height: 360px;  height: 40vh;  background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');">
               <div style="max-width: 500px">
-                <h2 class="text-white">
+                <h2 class="text-black">
                   Great products with <br />
                   best deals
                 </h2>
-                <p class="text-white">
+                <p class="text-black">
                   No matter how far along you are in your sophistication as an
                   amateur astronomer, there is always one.
                 </p>
@@ -45,7 +47,7 @@
   <section class="padding-top">
     <div class="container">
       <header class="section-heading">
-        <h3 class="section-title">New products</h3>
+        <h3 class="section-title text-center pt-4 pb-4 text-center">Hàng mới về</h3>
       </header>
 
       <div class="row">
@@ -443,5 +445,9 @@
 <style scoped>
 .img-wrap {
   object-fit: cover;
+}
+
+.active{
+    background-color: var(--dark)!important;
 }
 </style>
