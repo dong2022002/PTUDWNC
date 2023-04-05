@@ -18,6 +18,19 @@ const userView = [{
                 import ("../pages/ViewUser/ProductPage.vue")
         },
 
+        {
+            path: "Category",
+            name: "category",
+            component: () =>
+                import ("../pages/ViewUser/ProductList.vue")
+        },
+        {
+            path: "cskh",
+            name: "cskh",
+            component: () =>
+                import ("../pages/ViewUser/ContactPage.vue")
+        },
+
     ]
 }];
 

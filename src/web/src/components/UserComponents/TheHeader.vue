@@ -48,12 +48,12 @@
     </div>
     </div>
     <!-- Search -->
-    <div class="p-2 bd-highlight ">
+    <!-- <div class="p-2 bd-highlight ">
       <form class="d-flex justify-content-evenly ">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline search-dark" type="submit">Search</button>
       </form>
-    </div>
+    </div> -->
     <div class="order-lg-last">
               <div class="float-end">
                 <a href="#" class="btn  me-2">
