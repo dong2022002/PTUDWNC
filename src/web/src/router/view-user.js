@@ -30,6 +30,19 @@ const userView = [{
             component: () =>
                 import ("../pages/ViewUser/ContactPage.vue")
         },
+        //login - regis
+        {
+            path: "user/login",
+            name: "LoginUser",
+            component: () =>
+                import ("../pages/ViewUser/LoginPage.vue")
+        },
+        {
+            path: "user/register",
+            name: "RegisterUser",
+            component: () =>
+                import ("../pages/ViewUser/RegisPage.vue")
+        },
 
     ]
 }];

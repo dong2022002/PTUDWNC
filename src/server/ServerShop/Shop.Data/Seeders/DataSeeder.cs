@@ -22,6 +22,7 @@ namespace Shop.Data.Seeders
 			var productInventories = createProductInventories();
 			var discounts = createDiscounts();
 
+
 		}
 
 		private object createDiscounts()

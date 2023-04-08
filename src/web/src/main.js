@@ -19,7 +19,6 @@ import {
     Drawer,
     Button,
     message,
-    Form,
 } from 'ant-design-vue';
 
 import App from './App.vue';

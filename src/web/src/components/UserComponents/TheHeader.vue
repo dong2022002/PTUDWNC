@@ -1,8 +1,8 @@
 <template>
-      <nav class="navbar shadow mb-2 navbar-expand-lg navbar-light bg-light ">
+      <nav class="navbar shadow  navbar-expand-lg navbar-light bg-light ">
   <div class="container-fluid d-flex">
     <div class="p-2 flex-grow-1 bd-highlight">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Shop</a>
     </div>
     <div class="p-2 bd-highlight">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,10 +56,12 @@
     </div> -->
     <div class="order-lg-last">
               <div class="float-end">
-                <a href="#" class="btn  me-2">
+                <router-link :to="{name: 'LoginUser'}">
+                  <a class="btn  me-2">
                   <i class="fa fa-user purple"></i>
                   <span class="ms-1 d-none d-sm-inline-block"></span>
                 </a>
+                </router-link>
                 <a href="#" class="btn  me-2 cart-button">
                   <i class="fa fa-heart purple"></i>
                   <span class="ms-1 d-none d-sm-inline-block"></span>
@@ -85,7 +87,7 @@ export default {
       menuNav: [
         {
           name: "Trang chủ",
-          slug: "home",
+          slug: "/",
           submenu: false,
           dataSubMenus: [
 
