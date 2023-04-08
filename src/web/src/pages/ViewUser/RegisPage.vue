@@ -49,83 +49,91 @@
   </div>
 </template>
 <script>
-import { defineComponent, reactive, ref } from 'vue';
+import { defineComponent, reactive, ref } from 'vue'
 export default defineComponent({
   setup() {
-    const formRef = ref();
+    const formRef = ref()
     const formState = reactive({
       pass: '',
       checkPass: '',
-      age: undefined,
-    });
+      age: undefined
+    })
     let checkAge = async (_rule, value) => {
       if (!value) {
-        return Promise.reject('Please input the age');
+        document.addEventListener("DOMContentLoaded", () => resolve());
+        return Promise.reject('Please input the age')
       }
       if (!Number.isInteger(value)) {
-        return Promise.reject('Please input digits');
+        return Promise.reject('Please input digits')
       } else {
         if (value < 18) {
-          return Promise.reject('Age must be greater than 18');
+          return Promise.reject('Age must be greater than 18')
         } else {
-          return Promise.resolve();
+          return Promise.resolve()
         }
       }
-    };
+    }
     let validatePass = async (_rule, value) => {
       if (value === '') {
-        return Promise.reject('Please input the password');
+        return Promise.reject('Please input the password')
       } else {
         if (formState.checkPass !== '') {
-          formRef.value.validateFields('checkPass');
+          formRef.value.validateFields('checkPass')
         }
-        return Promise.resolve();
+        return Promise.resolve()
       }
-    };
+    }
     let validatePass2 = async (_rule, value) => {
       if (value === '') {
-        return Promise.reject('Please input the password again');
+        return Promise.reject('Please input the password again')
       } else if (value !== formState.pass) {
-        return Promise.reject("Two inputs don't match!");
+        return Promise.reject("Two inputs don't match!")
       } else {
-        return Promise.resolve();
+        return Promise.resolve()
       }
-    };
+    }
     const rules = {
-      pass: [{
-        required: true,
-        validator: validatePass,
-        trigger: 'change',
-      }],
-      checkPass: [{
-        validator: validatePass2,
-        trigger: 'change',
-      }],
-      age: [{
-        validator: checkAge,
-        trigger: 'change',
-      }],
-    };
+      pass: [
+        {
+          required: true,
+          validator: validatePass,
+          trigger: 'change'
+        }
+      ],
+      checkPass: [
+        {
+          validator: validatePass2,
+          trigger: 'change'
+        }
+      ],
+      age: [
+        {
+          validator: checkAge,
+          trigger: 'change'
+        }
+      ]
+    }
     const layout = {
       labelCol: {
-        span: 4,
+        span: 4
       },
       wrapperCol: {
-        span: 14,
-      },
-    };
-    const handleFinish = values => {
-      console.log(values, formState);
-    };
-    const handleFinishFailed = errors => {
-      console.log(errors);
-    };
+        span: 14
+      }
+    }
+    const handleFinish = (values) => {
+      console.log(values, formState)
+    }
+    const handleFinishFailed = (errors) => {
+      console.log(errors)
+    }
     const resetForm = () => {
-      formRef.value.resetFields();
-    };
+      formState.pass ="";
+      formState.checkPass = "";
+    }
     const handleValidate = (...args) => {
-      console.log(args);
-    };
+      console.log(args)
+    }
     return {
       formState,
       formRef,
@@ -134,10 +142,10 @@ export default defineComponent({
       handleFinishFailed,
       handleFinish,
       resetForm,
-      handleValidate,
-    };
-  },
-});
+      handleValidate
+    }
+  }
+})
 </script>
 <style scoped>
 .spacing-top {
@@ -148,14 +156,5 @@ export default defineComponent({
 }
 .spacing-bottom {
   margin-bottom: 400px;
-}
-#components-form-demo-normal-login .regis-form {
-  max-width: 300px;
-}
-#components-form-demo-normal-login .login-form-forgot {
-  float: right;
-}
-#components-form-demo-normal-login .regis-form-button {
-  width: 100%;
 }
 </style>
