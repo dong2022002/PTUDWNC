@@ -80,4 +80,7 @@ export default {
     margin: 32px;
     width: 30%;
 }
+.el-row{
+  padding-top:  24px;
+}
 </style>
