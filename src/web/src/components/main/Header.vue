@@ -1,5 +1,5 @@
 <template>
-  <el-row :gutter="20" class="ms-4 mt-3" style="height :40px">
+  <el-row  class="ms-4 mt-3" style="height :40px">
     <el-col :span="2"
       ><div class="grid-content ep-bg-purple" />
       <img src="../../../public/vite.svg" alt="">
@@ -56,7 +56,7 @@
       <div class="grid-content ep-bg-purple" />
     </el-col>
   </el-row>
-  <el-row :gutter="20">
+  <el-row >
     <el-col :span="3"><div class="grid-content ep-bg-purple" /></el-col>
     <el-col :span="12"><div class="grid-content ep-bg-purple" />
     <div class="d-flex justify-content-evenly bottom-menu">

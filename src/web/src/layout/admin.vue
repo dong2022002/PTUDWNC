@@ -36,6 +36,9 @@ export default {
 .el-header {
   padding: 0 !important;
 }
+.el-footer{
+  padding: 0 !important;
+}
 .container {
   max-width: 100%;
   margin: auto;
