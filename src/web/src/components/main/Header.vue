@@ -1,0 +1,139 @@
+<template>
+  <el-row :gutter="20" class="ms-4 mt-3" style="height :40px">
+    <el-col :span="2"
+      ><div class="grid-content ep-bg-purple" />
+      <img src="../../../public/vite.svg" alt="">
+    </el-col>
+    <el-col :span="13"
+      ><div class="grid-content ep-bg-purple" />
+      <div>
+        <el-input
+          v-model="input3"
+          size="large"
+          placeholder="Nhập tìm kiếm "
+          class="input-with-select"
+        >
+          <template #prepend>
+            <el-select
+                size="large"
+              v-model="select"
+              class="select-input"
+              placeholder="Chọn"
+              style="width: 115px"
+            >
+              <el-option label="Restaurant" value="1" />
+              <el-option label="Order No." value="2" />
+              <el-option label="Tel" value="3" />
+            </el-select>
+          </template>
+          <template #append>
+            <el-button>
+              <el-icon><search /></el-icon>
+            </el-button>
+          </template>
+        </el-input>
+      </div>
+    </el-col>
+    <el-col :span="9">
+      <el-row >
+        <el-col :span="10" class="center-col"
+          ><div class="grid-content ep-bg-purple" />
+          <el-button size="large"  type="primary" text class="fs-6"  :icon="HomeFilled">Trang chủ</el-button>
+        </el-col>
+        <el-col :span="10" class="center-col"
+          ><div class="grid-content ep-bg-purple" />
+           <el-button size="large" class="fs-6" text :icon="UserFilled">Tài khoản</el-button></el-col
+        >
+
+        <el-col :span="4" class="center-col"
+          ><div class="grid-content ep-bg-purple" />
+             <el-divider direction="vertical" style="height : 100%" />
+          <el-button size="large" type="primary"  text >
+            <el-icon size="28px" ><shopping-cart /></el-icon>
+            </el-button></el-col
+        >
+      </el-row>
+      <div class="grid-content ep-bg-purple" />
+    </el-col>
+  </el-row>
+  <el-row :gutter="20">
+    <el-col :span="3"><div class="grid-content ep-bg-purple" /></el-col>
+    <el-col :span="12"><div class="grid-content ep-bg-purple" />
+    <div class="d-flex justify-content-evenly bottom-menu">
+        <a href="" class="text-decoration-none text_bottom-menu">Máy tính</a>
+        <a href=""  class="text-decoration-none text_bottom-menu">LapTop</a>
+        <a href="" class="text-decoration-none text_bottom-menu">Ổ cứng</a>
+        <a href="" class="text-decoration-none text_bottom-menu">GPU</a>
+        <a href="" class="text-decoration-none text_bottom-menu">Tản nhiệt</a>
+        <a href="" class="text-decoration-none text_bottom-menu">Phụ kiện</a>
+    </div>
+    </el-col>
+    <el-col :span="9"><div class="grid-content ep-bg-purple" /></el-col>
+  </el-row>
+</template>
+
+<script>
+import { ref } from 'vue'
+import { Search, HomeFilled, UserFilled, ShoppingCart } from '@element-plus/icons-vue'
+export default {
+  components: {
+    Search,
+    ShoppingCart
+  },
+  setup() {
+    const activeIndex = ref('1')
+    const handleSelect = (key, keyPath) => {
+      console.log(key, keyPath)
+    }
+    const input3 = ref('')
+
+    const select = ref('')
+    return { activeIndex,
+    handleSelect,
+     input3,
+     select,
+     HomeFilled,
+     UserFilled,
+     }
+  }
+}
+</script>
+
+<style scoped>
+.flex-grow {
+  flex-grow: 1;
+}
+.select-input {
+  width: 20px;
+}
+.el-menu-demo {
+  border-bottom: none;
+}
+/* .el-row {
+  margin-bottom: 20px;
+} */
+.el-row:last-child {
+  margin-bottom: 0;
+}
+.el-col {
+  border-radius: 4px;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 4px;
+}
+.center-col{
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+}
+.bottom-menu{
+    margin-top: 6px;
+    font-size: 13px;
+
+}
+.text_bottom-menu{
+     color: #808089;
+}
+</style>

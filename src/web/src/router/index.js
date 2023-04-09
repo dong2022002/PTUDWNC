@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import admin from './admin.js';
-import ViewUser from './view-user.js';
-import Page404 from './404.js';
-const routes = [...admin, ...ViewUser, ...Page404];
+import user from './user.js';
+const routes = [...admin, ...user];
 
 const router = createRouter({
     history: createWebHistory(),
