@@ -115,8 +115,6 @@ export default defineComponent({
 .el-menu {
   border-right: none;
 }
-.el-scrollbar{
 
-}
 
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div class="feature-products">
+  <div class="feature-products ">
     <div class="d-flex justify-content-between ms-3">
-      <div class="fs-6 mb-4 fw-bold">Sản phẩm nổi bật</div>
+      <div class="fs-6 mb-4 fw-bold">Hàng mới về</div>
       <a href="#" class="text-decoration-none">
         <div class="more">
           Xem thêm
@@ -24,23 +24,10 @@
             class="image"
           />
           <div style="padding: 14px">
-            <text-clamp text='Yummy hamburger' class="title" :max-lines='2' />
-            <div class="d-flex">
-              <el-rate
-                class="m-0"
-                disabled
-                show-score
-                max="1"
-                v-model="value"
-              />
-              <el-divider direction="vertical" class="mt-2" />
-              <div class="buy mt-2">Đã bán 500</div>
-            </div>
-
+            <span>Yummy hamburger</span>
             <div class="bottom">
-              <div class="price">
-                230.000 đ <span class="discount">-34%</span>
-              </div>
+              <time class="time">{{ currentDate }}</time>
+              <el-button text class="button">Operating</el-button>
             </div>
           </div>
         </el-card>
@@ -58,8 +45,7 @@ export default {
   },
   setup() {
     const currentDate = ref(new Date())
-    const value = ref(3.7)
-    return { currentDate, value }
+    return { currentDate }
   }
 }
 </script>
@@ -100,17 +86,5 @@ export default {
 }
 .more {
   color: var(--text);
-}
-.buy {
-  font-size: 12px;
-  color: var(--text);
-}
-.discount {
-  font-size: 12px;
-  color: var(--text);
-}
-.title{
-  font-size: 14px;
-  font-weight: bold;
 }
 </style>
