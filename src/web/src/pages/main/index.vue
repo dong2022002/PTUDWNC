@@ -10,7 +10,8 @@
         <carousel class="carousel" />
         <featured-product />
         <new-product />
-        <price-products class="margin-bottom-main"/>
+        <price-products/>
+        <today-product  class="margin-bottom-main" />
       </el-col>
     </el-row>
   </div>
@@ -21,9 +22,17 @@ import SideBar from '../../components/main/SideBar.vue'
 import Carousel from '../../components/main/Carousel.vue'
 import FeaturedProduct from '../../components/main/FeaturedProduct.vue'
 import NewProduct from '../../components/main/NewProduct.vue'
+import TodayProduct from '../../components/main/TodayProduct.vue'
 import PriceProducts from '../../components/main/PriceProducts.vue'
 export default {
-  components: { SideBar, Carousel,FeaturedProduct ,NewProduct, PriceProducts}
+  components: {
+    SideBar,
+    Carousel,
+    FeaturedProduct,
+    NewProduct,
+    PriceProducts,
+    TodayProduct,
+    }
 }
 </script>
 

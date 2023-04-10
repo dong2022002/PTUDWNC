@@ -18,19 +18,7 @@
         :span="5"
         :offset="index > 0 ? 1 : 0"
       >
-        <el-card :body-style="{ padding: '16px 0 0 0' }">
-          <img
-            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-            class="image"
-          />
-          <div style="padding: 14px">
-            <span>Yummy hamburger</span>
-            <div class="bottom">
-              <time class="time">{{ currentDate }}</time>
-              <el-button text class="button">Operating</el-button>
-            </div>
-          </div>
-        </el-card>
+       <product-card />
       </el-col>
     </el-row>
   </div>
@@ -44,8 +32,6 @@ export default {
     DArrowRight
   },
   setup() {
-    const currentDate = ref(new Date())
-    return { currentDate }
   }
 }
 </script>
@@ -58,31 +44,6 @@ export default {
   min-height: 200px;
   width: 100%;
   background: #fff;
-}
-.time {
-  font-size: 12px;
-  color: #999;
-}
-
-.bottom {
-  margin-top: 13px;
-  line-height: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.button {
-  padding: 0;
-  min-height: auto;
-}
-
-.image {
-  border-radius: 12px;
-  margin: auto;
-  width: 120px;
-  object-fit: cover;
-  display: block;
 }
 .more {
   color: var(--text);

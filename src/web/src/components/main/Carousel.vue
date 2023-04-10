@@ -1,17 +1,11 @@
 <template>
   <el-carousel>
     <el-carousel-item v-for="item in 4" :key="item">
-      <!-- <img
-        contain
-        alt=""
-        height="350"
-        :src="getImageUrl(item)"
-      /> -->
       <el-image style="width: 100%; height: 100%" :src="getImageUrl(item)" fit="cover" />
     </el-carousel-item>
   </el-carousel>
 </template>
-<script lang="js">
+<script>
 export default {
 
   setup() {

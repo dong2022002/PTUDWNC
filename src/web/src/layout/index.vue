@@ -5,7 +5,7 @@
         <header-main />
       </el-header>
       <el-main>
-        <index />
+        <router-view></router-view>
       </el-main>
       <el-footer>
         <footer-main />
@@ -16,12 +16,10 @@
 <script>
 import HeaderMain from '../components/main/Header.vue'
 import FooterMain from '../components/main/Footer.vue'
-import Index from '../pages/main/index.vue'
 export default {
   components: {
     HeaderMain,
     FooterMain,
-    Index
   },
   setup() {}
 }

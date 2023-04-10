@@ -1,17 +1,19 @@
 <template>
   <div class="feature-products">
     <div class="d-flex justify-content-between ms-3">
-      <div class="fs-6 mb-4 fw-bold">Sản phẩm nổi bật</div>
-      <a href="#" class="text-decoration-none">
-        <div class="more">
-          Xem thêm
-          <el-icon size="small">
-            <d-arrow-right />
-          </el-icon>
-        </div>
-      </a>
+      <div class="fs-6 mb-4 fw-bold">Gợi ý hôm nay</div>
     </div>
     <el-row class="ms-3">
+      <el-col
+        v-for="(o, index) in 4"
+        :key="o"
+        :span="5"
+        :offset="index > 0 ? 1 : 0"
+      >
+        <product-card />
+      </el-col>
+    </el-row>
+    <el-row class="ms-3 mt-3">
       <el-col
         v-for="(o, index) in 4"
         :key="o"
@@ -55,3 +57,4 @@ export default {
 }
 
 </style>
+

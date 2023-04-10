@@ -36,16 +36,20 @@
     </el-col>
     <el-col :span="9">
       <el-row >
-        <el-col :span="10" class="center-col"
+        <el-col :span="7" class="center-col"
           ><div class="grid-content ep-bg-purple" />
           <el-button size="large"  type="primary" text class="fs-6"  :icon="HomeFilled">Trang chủ</el-button>
         </el-col>
-        <el-col :span="10" class="center-col"
+          <el-col :span="7" class="center-col"
+          ><div class="grid-content ep-bg-purple" />
+           <el-button size="large" class="fs-6" text :icon="Service">Liên hệ</el-button></el-col
+        >
+        <el-col :span="7" class="center-col"
           ><div class="grid-content ep-bg-purple" />
            <el-button size="large" class="fs-6" text :icon="UserFilled">Tài khoản</el-button></el-col
         >
 
-        <el-col :span="4" class="center-col"
+        <el-col :span="3" class="center-col"
           ><div class="grid-content ep-bg-purple" />
              <el-divider direction="vertical" style="height : 100%" />
           <el-button size="large" type="primary"  text >
@@ -74,11 +78,15 @@
 
 <script>
 import { ref } from 'vue'
-import { Search, HomeFilled, UserFilled, ShoppingCart } from '@element-plus/icons-vue'
+import { Search,
+HomeFilled,
+ UserFilled,
+  ShoppingCart,
+  Service } from '@element-plus/icons-vue'
 export default {
   components: {
     Search,
-    ShoppingCart
+    ShoppingCart,
   },
   setup() {
     const activeIndex = ref('1')
@@ -94,6 +102,7 @@ export default {
      select,
      HomeFilled,
      UserFilled,
+     Service
      }
   }
 }
