@@ -9,6 +9,7 @@ namespace Shop.Core.Entities
 	public class Product
 	{
         public int Id { get; set; }
+        public string slug { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }
         public string? ImageUrl { get; set; }
@@ -16,6 +17,7 @@ namespace Shop.Core.Entities
 		public DateTime CreatedAt { get; set; }
 		public DateTime? ModifiedAt { get; set; }
 		public DateTime? DeletedAt { get; set; }
+        public int viewCount { get; set; }
 
         public int ProductCategoryId { get; set; }
         public int Quantity { get; set; }

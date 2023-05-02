@@ -10,7 +10,7 @@ using Shop.Data.Contexts;
 
 namespace Shop.Data.Migrations
 {
-	[DbContext(typeof(ShopDbContext))]
+    [DbContext(typeof(ShopDbContext))]
     partial class ShopDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -290,6 +290,12 @@ namespace Shop.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("slug")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("viewCount")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

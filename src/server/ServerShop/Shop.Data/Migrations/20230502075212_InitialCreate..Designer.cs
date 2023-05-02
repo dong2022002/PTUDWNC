@@ -11,8 +11,8 @@ using Shop.Data.Contexts;
 
 namespace Shop.Data.Migrations
 {
-	[DbContext(typeof(ShopDbContext))]
-    [Migration("20230502010646_InitialCreate.")]
+    [DbContext(typeof(ShopDbContext))]
+    [Migration("20230502075212_InitialCreate.")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -293,6 +293,12 @@ namespace Shop.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("slug")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("viewCount")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

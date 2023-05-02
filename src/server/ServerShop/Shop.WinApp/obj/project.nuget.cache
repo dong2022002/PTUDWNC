@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vES8re21ZnsNEhzlKuWPIWmN94vdTzna8TxrAsxexk1AaqdRdVN4/PAtAPzvgSmn7NaJQKC5cDr1cCzSCLI+1Q==",
+  "dgSpecHash": "jebD8vsa53qhRsaVxpD203iSng/4S5CB203R2m617xEj3NQlFFvWdYJ9Shk9qP/Cg2bo48p+EEe924SkDcbuoQ==",
   "success": true,
   "projectFilePath": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WinApp\\Shop.WinApp.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.21.0\\system.identitymodel.tokens.jwt.6.21.0.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.linq.dynamic.core\\1.3.2\\system.linq.dynamic.core.1.3.2.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

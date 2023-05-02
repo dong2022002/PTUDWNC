@@ -23,6 +23,10 @@ namespace Shop.Data.Mapings
 				.IsRequired()
 				.HasMaxLength(50);
 
+			builder.Property(x => x.slug)
+				.IsRequired()
+				.HasMaxLength(100);
+
 			builder.Property(x => x.Description)
 				.IsRequired()
 				.HasMaxLength(100);
@@ -32,6 +36,9 @@ namespace Shop.Data.Mapings
 				.HasMaxLength(100);
 
 			builder.Property(x => x.Price)
+				.HasDefaultValue(0);
+
+			builder.Property(x => x.viewCount)
 				.HasDefaultValue(0);
 
 			builder.Property(x => x.CreatedAt)
