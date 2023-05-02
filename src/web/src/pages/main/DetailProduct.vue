@@ -44,12 +44,24 @@
         </el-col>
       </el-row>
     </div>
+	<div class="body-container my-4 p-3">
+		<div class="Header fs-5">Thông tin chi tiết</div>
+		<div class="desc fs-6 mt-2">
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quos quidem eum velit mollitia? Nemo, quas! Optio, vel qui! Quae tempore nulla accusantium totam perspiciatis, aperiam et obcaecati consectetur sint? Quod rerum, tempora dolores doloremque ducimus temporibus harum id aperiam exercitationem delectus cum nobis similique, vero modi quos beatae dolor?
+		</div>
+	</div>
+	<div class="review-container my-4 p-3">
+		<div class="Header fs-5">Đánh giá, Nhận xét</div>
+		<div class="desc fs-6 mt-2">
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quos quidem eum velit mollitia? Nemo, quas! Optio, vel qui! Quae tempore nulla accusantium totam perspiciatis, aperiam et obcaecati consectetur sint? Quod rerum, tempora dolores doloremque ducimus temporibus harum id aperiam exercitationem delectus cum nobis similique, vero modi quos beatae dolor?
+		</div>
+	</div>
   </div>
 </template>
 
 <script>
-import { getImageAssetsSlider } from '../../utils/GetImageUrl.js'
 import { ref } from 'vue'
+import { getImageAssetsSlider } from '../../utils/GetImageUrl.js'
 export default {
   setup() {
     const value = ref(3.7)
@@ -64,7 +76,7 @@ export default {
   min-height: 100vh;
   background: #f5f5fa;
 }
-.main-container {
+.main-container,.body-container,.review-container {
   background: #fff;
   min-height: 400px;
   border-radius: 4px;
@@ -95,5 +107,9 @@ export default {
 .buy-button {
   height: 48px;
   width: 200px;
+}
+.desc{
+	color: var(--text);
+	min-height: 20vh;
 }
 </style>

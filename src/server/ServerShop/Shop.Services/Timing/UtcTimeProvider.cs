@@ -1,4 +1,4 @@
-﻿namespace TatBlog.Services.Timing;
+﻿namespace Shop.Services.Timing;
 
 public class UtcTimeProvider : ITimeProvider
 {

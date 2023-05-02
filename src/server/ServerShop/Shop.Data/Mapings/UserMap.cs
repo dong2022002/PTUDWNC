@@ -31,10 +31,8 @@ namespace Shop.Data.Mapings
 				.IsRequired()
 				.HasMaxLength(100);
 			builder.Property(x => x.Address)
-				.IsRequired()
 				.HasMaxLength(100);
 			builder.Property(x => x.PhoneNumber)
-				.IsRequired()
 				.HasMaxLength(10);
 			builder.Property(x => x.CreatedAt)
 				.HasColumnType("datetime");

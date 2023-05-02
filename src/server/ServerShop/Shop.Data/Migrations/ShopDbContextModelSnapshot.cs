@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TatBlog.Data.Contexts;
+using Shop.Data.Contexts;
 
 #nullable disable
 
 namespace Shop.Data.Migrations
 {
-    [DbContext(typeof(ShopDbContext))]
+	[DbContext(typeof(ShopDbContext))]
     partial class ShopDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -136,7 +136,7 @@ namespace Shop.Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeletedAt")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -145,7 +145,7 @@ namespace Shop.Data.Migrations
                     b.Property<double>("DiscountPercent")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("ModifiedAt")
+                    b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -274,8 +274,8 @@ namespace Shop.Data.Migrations
                     b.Property<int>("DiscountId")
                         .HasColumnType("int");
 
-                    b.Property<int>("InventoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
@@ -289,15 +289,12 @@ namespace Shop.Data.Migrations
                     b.Property<int>("ProductCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("SKU")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DiscountId");
-
-                    b.HasIndex("InventoryId")
-                        .IsUnique();
 
                     b.HasIndex("ProductCategoryId");
 
@@ -330,31 +327,6 @@ namespace Shop.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductCategories");
-                });
-
-            modelBuilder.Entity("Shop.Core.Entities.ProductInventory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductInventories");
                 });
 
             modelBuilder.Entity("Shop.Core.Entities.ShoppingSession", b =>
@@ -525,12 +497,6 @@ namespace Shop.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Shop.Core.Entities.ProductInventory", "ProductInventory")
-                        .WithOne("Product")
-                        .HasForeignKey("Shop.Core.Entities.Product", "InventoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Shop.Core.Entities.ProductCategory", "ProductCategory")
                         .WithMany("Products")
                         .HasForeignKey("ProductCategoryId")
@@ -540,8 +506,6 @@ namespace Shop.Data.Migrations
                     b.Navigation("Discount");
 
                     b.Navigation("ProductCategory");
-
-                    b.Navigation("ProductInventory");
                 });
 
             modelBuilder.Entity("Shop.Core.Entities.ShoppingSession", b =>
@@ -596,11 +560,6 @@ namespace Shop.Data.Migrations
             modelBuilder.Entity("Shop.Core.Entities.ProductCategory", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("Shop.Core.Entities.ProductInventory", b =>
-                {
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Shop.Core.Entities.ShoppingSession", b =>

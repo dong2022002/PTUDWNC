@@ -1,13 +1,13 @@
-﻿using TatBlog.Core.Contracts;
+﻿using Shop.Core.Contracts;
 
-namespace TatBlog.Core.Collections;
+namespace Shop.Core.Collections;
 
 public class PaginationResult<T>
 {
 	public IEnumerable<T> Items { get; set; }
 
 	public PagingMetadata Metadata { get; set; }
-	
+
 	public PaginationResult(IPagedList<T> pagedList)
 	{
 		Items = pagedList;

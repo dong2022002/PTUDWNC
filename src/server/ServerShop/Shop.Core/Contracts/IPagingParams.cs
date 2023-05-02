@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TatBlog.Core.Contracts
+namespace Shop.Core.Contracts
 {
-    public interface IPagingParams
-    {
-        int PageSize { get; set; }
+	public interface IPagingParams
+	{
+		int PageSize { get; set; }
 
-        int PageNumber { get; set; }
-        string SortColumn { get; set; }
+		int PageNumber { get; set; }
+		string SortColumn { get; set; }
 
-        string SortOrder { get; set; }
+		string SortOrder { get; set; }
 
-    }
+	}
 }

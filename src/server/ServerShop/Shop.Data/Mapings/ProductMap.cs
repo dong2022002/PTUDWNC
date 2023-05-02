@@ -27,7 +27,7 @@ namespace Shop.Data.Mapings
 				.IsRequired()
 				.HasMaxLength(100);
 
-			builder.Property(x => x.SKU)
+			builder.Property(x => x.ImageUrl)
 				.IsRequired()
 				.HasMaxLength(100);
 

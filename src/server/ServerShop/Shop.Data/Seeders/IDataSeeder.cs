@@ -8,6 +8,6 @@ namespace Shop.Data.Seeders
 {
 	public interface IDataSeeder
 	{
-		void initialize();
+		void Initialize();
 	}
 }

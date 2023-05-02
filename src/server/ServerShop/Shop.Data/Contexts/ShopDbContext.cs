@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace TatBlog.Data.Contexts
+
+namespace Shop.Data.Contexts
 {
 	public class ShopDbContext : DbContext
 	{
@@ -16,15 +17,18 @@ namespace TatBlog.Data.Contexts
 		public DbSet<OrderItem> OrderItems { get; set; }
 		public DbSet<Product> Products { get; set; }
 		public DbSet<ProductCategory> ProductCategories { get; set; }
-		public DbSet<ProductInventory> ProductInventories { get; set; }
 		public DbSet<ShoppingSession> ShoppingSessions { get; set; }
 		public DbSet<User> Users { get; set; }
 		public DbSet<UserPayment> UserPayments { get; set; }
 
-		//public ShopDbContext(DbContextOptions<ShopDbContext> options) : base(options)
-		//{
+		public ShopDbContext(DbContextOptions<ShopDbContext> options) : base(options)
+		{
 
-		//}
+		}
+
+		public ShopDbContext()
+		{
+		}
 
 		protected override void OnConfiguring(
 			DbContextOptionsBuilder optionsBuilder)
@@ -40,9 +44,6 @@ namespace TatBlog.Data.Contexts
 			modelBuilder.Entity<User>()
 				.HasOne(a => a.OrderDetail).WithOne(b => b.User)
 				.HasForeignKey<OrderDetail>(e => e.UserId);
-			modelBuilder.Entity<ProductInventory>()
-				.HasOne(a => a.Product).WithOne(b => b.ProductInventory)
-				.HasForeignKey<Product>(e => e.InventoryId);
 
 			modelBuilder.ApplyConfigurationsFromAssembly(
 			   typeof(Product).Assembly);
@@ -57,6 +58,6 @@ namespace TatBlog.Data.Contexts
 
 		}
 
-	
+
 	}
 }

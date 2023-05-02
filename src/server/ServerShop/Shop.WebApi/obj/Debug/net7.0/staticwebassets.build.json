@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "GhiKVoX4IdEFJiycSChY4981zqd7Lw8h3qh2MM3yPH4=",
+  "Source": "Shop.WebApi",
+  "BasePath": "_content/Shop.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Shop.WebApi\\wwwroot",
+      "Source": "Shop.WebApi",
+      "ContentRoot": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\",
+      "BasePath": "_content/Shop.WebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

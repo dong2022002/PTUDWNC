@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using TatBlog.Core.Contracts;
+﻿using Shop.Core.Contracts;
+using System.Collections;
 
-namespace TatBlog.Core.Collections;
+namespace Shop.Core.Collections;
 
 public class PagedList<T> : PagingMetadata, IPagedList<T>
 {

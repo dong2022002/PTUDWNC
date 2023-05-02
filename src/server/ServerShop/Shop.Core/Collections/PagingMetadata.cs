@@ -1,6 +1,6 @@
-﻿using TatBlog.Core.Contracts;
+﻿using Shop.Core.Contracts;
 
-namespace TatBlog.Core.Collections;
+namespace Shop.Core.Collections;
 
 public class PagingMetadata : IPagedList
 {
@@ -49,16 +49,16 @@ public class PagingMetadata : IPagedList
 
 	public bool HasPreviousPage => PageIndex > 0;
 
-	public bool HasNextPage => (PageIndex < (PageCount - 1));
+	public bool HasNextPage => PageIndex < PageCount - 1;
 
-	public int FirstItemIndex => (PageIndex * PageSize) + 1;
+	public int FirstItemIndex => PageIndex * PageSize + 1;
 
 	public int LastItemIndex
-		=> Math.Min(TotalItemCount, ((PageIndex * PageSize) + PageSize));
+		=> Math.Min(TotalItemCount, PageIndex * PageSize + PageSize);
 
-	public bool IsFirstPage => (PageIndex <= 0);
+	public bool IsFirstPage => PageIndex <= 0;
 
-	public bool IsLastPage => (PageIndex >= (PageCount - 1));
+	public bool IsLastPage => PageIndex >= PageCount - 1;
 
 	public int PagedCount => PageCount;
 }

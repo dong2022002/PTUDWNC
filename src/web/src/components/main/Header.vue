@@ -1,8 +1,8 @@
 <template>
-  <el-row  class="ms-4 mt-3" style="height :40px">
+  <el-row class="ms-4 mt-3" style="height: 40px">
     <el-col :span="2"
       ><div class="grid-content ep-bg-purple" />
-      <img src="../../../public/vite.svg" alt="">
+      <img src="../../../public/vite.svg" alt="" />
     </el-col>
     <el-col :span="13"
       ><div class="grid-content ep-bg-purple" />
@@ -15,7 +15,7 @@
         >
           <template #prepend>
             <el-select
-                size="large"
+              size="large"
               v-model="select"
               class="select-input"
               placeholder="Chọn"
@@ -35,77 +35,88 @@
       </div>
     </el-col>
     <el-col :span="9">
-      <el-row >
+      <el-row>
         <el-col :span="7" class="center-col"
           ><div class="grid-content ep-bg-purple" />
-          <el-button size="large"  type="primary" text class="fs-6"  :icon="HomeFilled">Trang chủ</el-button>
+          <el-button
+            size="large"
+            type="primary"
+            text
+            class="fs-6"
+            :icon="HomeFilled"
+            >Trang chủ</el-button
+          >
         </el-col>
-          <el-col :span="7" class="center-col"
-          ><div class="grid-content ep-bg-purple" />
-           <el-button size="large" class="fs-6" text :icon="Service">Liên hệ</el-button></el-col
-        >
         <el-col :span="7" class="center-col"
           ><div class="grid-content ep-bg-purple" />
-           <el-button size="large" class="fs-6" text :icon="UserFilled">Tài khoản</el-button></el-col
+          <el-button size="large" class="fs-6" text :icon="Service"
+            >Liên hệ</el-button
+          ></el-col
         >
-
-        <el-col :span="3" class="center-col"
+        <el-col :span="6" class="center-col"
           ><div class="grid-content ep-bg-purple" />
-             <el-divider direction="vertical" style="height : 100%" />
-          <el-button size="large" type="primary"  text >
-            <el-icon size="28px" ><shopping-cart /></el-icon>
-            </el-button></el-col
-        >
+          <Login></Login>
+        </el-col>
+
+        <el-col :span="3" class="center-col">
+          <div class="grid-content ep-bg-purple" />
+          <el-button size="large" type="primary" text>
+            <el-icon size="28px"><shopping-cart /> </el-icon> </el-button
+        ></el-col>
       </el-row>
       <div class="grid-content ep-bg-purple" />
     </el-col>
   </el-row>
-  <el-row >
+  <el-row>
     <el-col :span="3"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="12"><div class="grid-content ep-bg-purple" />
-    <div class="d-flex justify-content-evenly bottom-menu">
+    <el-col :span="12"
+      ><div class="grid-content ep-bg-purple" />
+      <div class="d-flex justify-content-evenly bottom-menu">
         <a href="" class="text-decoration-none text_bottom-menu">Máy tính</a>
-        <a href=""  class="text-decoration-none text_bottom-menu">LapTop</a>
+        <a href="" class="text-decoration-none text_bottom-menu">LapTop</a>
         <a href="" class="text-decoration-none text_bottom-menu">Ổ cứng</a>
         <a href="" class="text-decoration-none text_bottom-menu">GPU</a>
         <a href="" class="text-decoration-none text_bottom-menu">Tản nhiệt</a>
         <a href="" class="text-decoration-none text_bottom-menu">Phụ kiện</a>
-    </div>
+      </div>
     </el-col>
     <el-col :span="9"><div class="grid-content ep-bg-purple" /></el-col>
   </el-row>
 </template>
 
 <script>
-import { ref } from 'vue'
-import { Search,
-HomeFilled,
- UserFilled,
+import {
+  HomeFilled,
+  Search,
+  Service,
   ShoppingCart,
-  Service } from '@element-plus/icons-vue'
+  UserFilled,
+} from "@element-plus/icons-vue";
+import { ref } from "vue";
 export default {
   components: {
     Search,
     ShoppingCart,
   },
   setup() {
-    const activeIndex = ref('1')
+    const activeIndex = ref("1");
     const handleSelect = (key, keyPath) => {
-      console.log(key, keyPath)
-    }
-    const input3 = ref('')
+      console.log(key, keyPath);
+    };
+    const input3 = ref("");
 
-    const select = ref('')
-    return { activeIndex,
-    handleSelect,
-     input3,
-     select,
-     HomeFilled,
-     UserFilled,
-     Service
-     }
-  }
-}
+    const select = ref("");
+    return {
+      activeIndex,
+      handleSelect,
+      input3,
+      select,
+      HomeFilled,
+      UserFilled,
+      Service,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -132,17 +143,16 @@ export default {
   border-radius: 4px;
   min-height: 4px;
 }
-.center-col{
-    margin-top: 4px;
-    display: flex;
-    justify-content: center;
+.center-col {
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
 }
-.bottom-menu{
-    margin-top: 6px;
-    font-size: 13px;
-
+.bottom-menu {
+  margin-top: 6px;
+  font-size: 13px;
 }
-.text_bottom-menu{
-     color: #808089;
+.text_bottom-menu {
+  color: #808089;
 }
 </style>

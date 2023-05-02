@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace TatBlog.Services.Extensions
+namespace Shop.Services.Extensions
 {
 	public static class ConvertString
 	{
@@ -24,8 +24,8 @@ namespace TatBlog.Services.Extensions
 		}
 		public static string RemoveAccent(this string txt)
 		{
-			byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(txt);
-			return System.Text.Encoding.ASCII.GetString(bytes);
+			byte[] bytes = Encoding.GetEncoding("Cyrillic").GetBytes(txt);
+			return Encoding.ASCII.GetString(bytes);
 		}
 		public static IQueryable<TSource> WhereIf<TSource>(this IQueryable<TSource> source, bool condition, Func<TSource, bool> predicate)
 		{
