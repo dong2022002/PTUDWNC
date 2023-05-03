@@ -81,3 +81,4 @@ D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.WebApi\
 D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.WebApi\obj\Debug\net7.0\Shop.WebApi.csproj.CopyComplete
 D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.WebApi\obj\Debug\net7.0\Shop.WebApi.genruntimeconfig.cache
 D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.WebApi\obj\Debug\net7.0\ref\Shop.WebApi.dll
+D:\workspace\vuejs\web-ecommerce\ecommerce-ui\src\server\ServerShop\Shop.WebApi\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll

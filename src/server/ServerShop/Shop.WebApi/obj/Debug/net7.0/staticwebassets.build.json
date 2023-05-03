@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GhiKVoX4IdEFJiycSChY4981zqd7Lw8h3qh2MM3yPH4=",
+  "Hash": "8KgZxPm3ClqQIuM7X2ysl1T7zh6H8xHjVh7rmD9uNDo=",
   "Source": "Shop.WebApi",
   "BasePath": "_content/Shop.WebApi",
   "Mode": "Default",
@@ -15,5 +15,74 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\0d3a6564639d45afb3c98e5e79d85e6d.png",
+      "SourceId": "Shop.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\",
+      "BasePath": "_content/Shop.WebApi",
+      "RelativePath": "uploads/pictures/0d3a6564639d45afb3c98e5e79d85e6d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\pictures\\0d3a6564639d45afb3c98e5e79d85e6d.png"
+    },
+    {
+      "Identity": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\107e67220180409ba8f952cf0c354932.jpg",
+      "SourceId": "Shop.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\",
+      "BasePath": "_content/Shop.WebApi",
+      "RelativePath": "uploads/pictures/107e67220180409ba8f952cf0c354932.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\pictures\\107e67220180409ba8f952cf0c354932.jpg"
+    },
+    {
+      "Identity": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\5972f9f23081403e9996ebaac3ccdb31.jpg",
+      "SourceId": "Shop.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\",
+      "BasePath": "_content/Shop.WebApi",
+      "RelativePath": "uploads/pictures/5972f9f23081403e9996ebaac3ccdb31.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\pictures\\5972f9f23081403e9996ebaac3ccdb31.jpg"
+    },
+    {
+      "Identity": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\79c933e2a88b43cdb558012b3bb626d2.png",
+      "SourceId": "Shop.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\",
+      "BasePath": "_content/Shop.WebApi",
+      "RelativePath": "uploads/pictures/79c933e2a88b43cdb558012b3bb626d2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\pictures\\79c933e2a88b43cdb558012b3bb626d2.png"
+    }
+  ]
 }

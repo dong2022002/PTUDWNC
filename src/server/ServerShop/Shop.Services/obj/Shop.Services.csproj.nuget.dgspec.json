@@ -186,6 +186,14 @@
             "System.Linq.Dynamic.Core": {
               "target": "Package",
               "version": "[1.3.2, )"
+            },
+            "System.Text.Encoding": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Text.Encoding.Extensions": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

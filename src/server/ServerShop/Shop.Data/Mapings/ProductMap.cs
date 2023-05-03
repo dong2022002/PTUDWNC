@@ -23,7 +23,7 @@ namespace Shop.Data.Mapings
 				.IsRequired()
 				.HasMaxLength(50);
 
-			builder.Property(x => x.slug)
+			builder.Property(x => x.Slug)
 				.IsRequired()
 				.HasMaxLength(100);
 

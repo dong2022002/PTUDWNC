@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Shop.Services.Shops
@@ -30,31 +31,6 @@ namespace Shop.Services.Shops
 				.ToListAsync(cancellationToken);
 		}
 
-		public async Task<IList<Product>> GetDiscountProduct(int number = 0, CancellationToken cancellationToken = default)
-		{
-			IQueryable<Product> products = _context.Set<Product>()
-														.Include(x => x.Discount)
-														.OrderByDescending(x => x.Discount.DiscountPercent);
-			if (number > 0)
-			{
-				products
-				    .Take(number);
-			}
-			return await products.ToListAsync(cancellationToken);
-        }
-
-		public async Task<IList<Product>> GetNewProduct(int number = 0, CancellationToken cancellationToken = default)
-		{
-			IQueryable<Product> products = _context.Set<Product>()
-														.OrderByDescending(x => x.CreatedAt);
-			if (number > 0)
-			{
-				products
-					.Take(number);
-			}
-			return await products.ToListAsync(cancellationToken);
-		}
-
 		public async Task<IPagedList<Product>> GetPagedProductAsync(IPagingParams pagingParams, ProductQuery query, CancellationToken cancellationToken = default)
 		{
 			var productQuery = FilterProducts(query);
@@ -69,7 +45,7 @@ namespace Shop.Services.Shops
 													.Include(p => p.Discount);
             if (query.TitleSlug != null)
             {
-				products = products.Where(x => x.slug == query.TitleSlug);
+				products = products.Where(x => x.Slug == query.TitleSlug);
             }
             if (query.CategorySlug != null)
             {
@@ -94,20 +70,10 @@ namespace Shop.Services.Shops
 			return await _context.Set<Product>()
 				.Include(x => x.Discount)
 				.Include(x => x.ProductCategory)
-				.FirstOrDefaultAsync(cancellationToken);
+				.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
 		}
 
-		public async Task<IList<Product>> GetProductFeatured(int number = 0, CancellationToken cancellationToken = default)
-		{
-			IQueryable<Product> products = _context.Set<Product>()
-														.OrderByDescending(x => x.viewCount);
-			if (number > 0)
-			{
-				products
-					.Take(number);
-			}
-			return await products.ToListAsync(cancellationToken);
-		}
+		
 
 		public async Task<IList<Product>> getProductRandom(int number, CancellationToken cancellationToken = default)
 		{
@@ -128,5 +94,73 @@ namespace Shop.Services.Shops
 					 cancellationToken);
 		}
 
+		public async Task<IPagedList<T>> GetPagedProductAsync<T>(IPagingParams pagingParams, Func<IQueryable<Product>, IQueryable<T>> mapper, ProductQuery query, CancellationToken cancellationToken = default)
+		{
+			var productQuery = FilterProducts(query);
+
+			return await mapper(productQuery)
+				 .ToPagedListAsync(pagingParams, cancellationToken);
+		}
+
+		public async Task<IList<T>> GetProductFeatured<T>(int number, Func<IQueryable<Product>, IQueryable<T>> mapper, CancellationToken cancellationToken = default)
+		{
+			var products = _context.Set<Product>()
+				.Include(x => x.ProductCategory)
+				.Include(x => x.Discount)
+				.OrderByDescending(x => x.viewCount)
+				.Take(number);
+			return await mapper(products).ToListAsync(cancellationToken);
+		}
+
+		public async Task<bool> AddOrUpdateProductsAsync(Product newProduct, CancellationToken cancellationToken = default)
+		{
+			if (newProduct.Id <= 0)
+			{
+				_context.Products.Add(newProduct);
+
+			}
+			else
+			{
+				_context.Set<Product>().Update(newProduct);
+
+			}
+			return (await _context.SaveChangesAsync(cancellationToken)) > 0;
+		}
+
+		public async Task<bool> DeleteProductAsync(int idProduct, CancellationToken cancellationToken = default)
+		{
+			var product = _context.Set<Product>()
+			  .Where(t => t.Id == idProduct);
+			if (product.IsNullOrEmpty()) return false;
+			await product.ExecuteDeleteAsync(cancellationToken);
+			return true;
+		}
+
+		public async Task<IList<T>> GetNewProduct<T>(int number, Func<IQueryable<Product>, IQueryable<T>> mapper, CancellationToken cancellationToken = default)
+		{
+			var products = _context.Set<Product>()
+				.Include(x => x.ProductCategory)
+				.Include(x => x.Discount)
+				.OrderByDescending(x => x.CreatedAt)
+				.Take(number);
+			return await mapper(products).ToListAsync(cancellationToken);
+		}
+
+		public async Task<IList<T>> GetDiscountProduct<T>(int number, Func<IQueryable<Product>, IQueryable<T>> mapper, CancellationToken cancellationToken = default)
+		{
+			var products = _context.Set<Product>()
+				.Include(x => x.ProductCategory)
+				.Include(x => x.Discount)
+				.OrderByDescending(x => x.Discount.DiscountPercent)
+				.Take(number);
+			return await mapper(products).ToListAsync(cancellationToken);
+		}
+
+		public async Task<bool> IsProductSlugExistedAsync(int idProduct, string slug, CancellationToken cancellationToken = default)
+		{
+			return await _context.Set<Product>()
+				.AnyAsync(x => x.Id != idProduct && x.Slug == slug,
+				cancellationToken);
+		}
 	}
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jebD8vsa53qhRsaVxpD203iSng/4S5CB203R2m617xEj3NQlFFvWdYJ9Shk9qP/Cg2bo48p+EEe924SkDcbuoQ==",
+  "dgSpecHash": "zW3l0bhYGJDatl5HdgZ4aAgKificTPrEFtiVn7bH1jAe+Js7H1hZutU5gc9lXq1uYGnkC+zcOVeoXN9RTp/EDw==",
   "success": true,
   "projectFilePath": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WinApp\\Shop.WinApp.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,7 @@
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\TRAN DIEU DONG\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",

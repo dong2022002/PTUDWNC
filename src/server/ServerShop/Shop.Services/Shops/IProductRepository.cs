@@ -1,4 +1,5 @@
-﻿using Shop.Core.Contracts;
+﻿using Azure;
+using Shop.Core.Contracts;
 using Shop.Core.DTO;
 using Shop.Core.Entities;
 using System;
@@ -16,13 +17,22 @@ namespace Shop.Services.Shops
 		Task<Product> GetProductById(int id,CancellationToken cancellationToken =default);
 
 		//getProductFeatured
-		Task<IList<Product>> GetProductFeatured(int number = 0, CancellationToken cancellationToken= default);
+		Task<IList<T>> GetProductFeatured<T>(
+			int number,
+			Func<IQueryable<Product>, IQueryable<T>> mapper, 
+			CancellationToken cancellationToken= default);
 
 		//getNewProducts
-		Task<IList<Product>> GetNewProduct(int number = 0, CancellationToken cancellationToken=default);
+		Task<IList<T>> GetNewProduct<T>(
+			int number,
+			Func<IQueryable<Product>, IQueryable<T>> mapper,
+			CancellationToken cancellationToken =default);
 
 		//getDiscountProducts
-		Task<IList<Product>> GetDiscountProduct(int number =0, CancellationToken cancellationToken=default);
+		Task<IList<T>> GetDiscountProduct<T>(
+			int number,
+			Func<IQueryable<Product>, IQueryable<T>> mapper,
+			CancellationToken cancellationToken =default);
 
 		//getProductbyCategory
 	
@@ -38,5 +48,24 @@ namespace Shop.Services.Shops
 			   IPagingParams pagingParams,
 			   ProductQuery query,
 			   CancellationToken cancellationToken = default);
+
+		Task<IPagedList<T>> GetPagedProductAsync<T>(
+			 IPagingParams pagingParams,
+			 Func<IQueryable<Product>, IQueryable<T>> mapper,
+			 ProductQuery query,
+			 CancellationToken cancellationToken = default);
+
+		Task<bool> AddOrUpdateProductsAsync(
+			Product newProduct,
+			CancellationToken cancellationToken = default);
+
+		Task<bool> DeleteProductAsync(
+		int idProduct,
+		CancellationToken cancellationToken = default);
+
+		Task<bool> IsProductSlugExistedAsync(
+		  int idProduct,
+		  string slug,
+		  CancellationToken cancellationToken = default);
 	}
 }

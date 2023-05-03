@@ -12,7 +12,7 @@ using Shop.Data.Contexts;
 namespace Shop.Data.Migrations
 {
     [DbContext(typeof(ShopDbContext))]
-    [Migration("20230502075212_InitialCreate.")]
+    [Migration("20230503083258_InitialCreate.")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -295,7 +295,7 @@ namespace Shop.Data.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("slug")
+                    b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("viewCount")
@@ -331,6 +331,9 @@ namespace Shop.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

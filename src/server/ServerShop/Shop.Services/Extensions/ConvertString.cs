@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Shop.Services.Extensions
 {
@@ -24,8 +26,15 @@ namespace Shop.Services.Extensions
 		}
 		public static string RemoveAccent(this string txt)
 		{
-			byte[] bytes = Encoding.GetEncoding("Cyrillic").GetBytes(txt);
-			return Encoding.ASCII.GetString(bytes);
+			if (string.IsNullOrWhiteSpace(txt))
+				return txt;
+
+			txt = txt.Normalize(NormalizationForm.FormD);
+			char[] chars = txt
+				.Where(c => CharUnicodeInfo.GetUnicodeCategory(c)
+				!= UnicodeCategory.NonSpacingMark).ToArray();
+
+			return new string(chars).Normalize(NormalizationForm.FormC);
 		}
 		public static IQueryable<TSource> WhereIf<TSource>(this IQueryable<TSource> source, bool condition, Func<TSource, bool> predicate)
 		{
