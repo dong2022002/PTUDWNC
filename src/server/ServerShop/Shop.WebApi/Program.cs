@@ -18,6 +18,8 @@ var app = builder.Build();
 	app.UseDataSeeder();
 
 	app.MapProductsEndpoints();
+	app.MapCategoriesEndpoints();
+
 	app.Run();
 }
 

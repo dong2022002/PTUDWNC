@@ -40,6 +40,9 @@ namespace Shop.WebApi.Endpoints
 			routerGroupBuilder.MapGet("/discountProduct/{limit:int}", GetDiscountProducts)
 				.WithName("GetDiscountProducts")
 				.Produces<ApiResponse<IList<ProductsDto>>>();
+			routerGroupBuilder.MapGet("/randomProduct/{limit:int}", GetRandomProducts)
+				.WithName("GetRandomProducts")
+				.Produces<ApiResponse<IList<ProductsDto>>>();
 
 
 			routerGroupBuilder.MapPost(
@@ -97,6 +100,16 @@ namespace Shop.WebApi.Endpoints
 		{
 			var products = await productRepository
 				.GetDiscountProduct(limit, posts => posts.ProjectToType<ProductsDto>());
+			return Results.Ok(ApiResponse.Success(products));
+
+		}
+
+		private static async Task<IResult> GetRandomProducts(
+		int limit,
+		IProductRepository productRepository)
+		{
+			var products = await productRepository
+				.getProductRandom(limit, posts => posts.ProjectToType<ProductsDto>());
 			return Results.Ok(ApiResponse.Success(products));
 
 		}

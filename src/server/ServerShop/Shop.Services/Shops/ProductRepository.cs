@@ -75,12 +75,14 @@ namespace Shop.Services.Shops
 
 		
 
-		public async Task<IList<Product>> getProductRandom(int number, CancellationToken cancellationToken = default)
+		public async Task<IList<T>> getProductRandom<T>(int number, Func<IQueryable<Product>, IQueryable<T>> mapper, CancellationToken cancellationToken = default)
 		{
-			return await _context.Set<Product>()
-				.OrderBy(x => Guid.NewGuid())
-				.Take(number)
-				.ToListAsync(cancellationToken);
+			var products=  _context.Set<Product>()
+					.Include(x => x.ProductCategory)
+					.Include(x => x.Discount)
+					.OrderBy(x => Guid.NewGuid())
+					.Take(number);
+			return await mapper(products).ToListAsync(cancellationToken);
 		}
 
 		public async Task IncreaseViewCountAsync(

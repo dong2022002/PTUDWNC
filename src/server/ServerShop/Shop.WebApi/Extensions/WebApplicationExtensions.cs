@@ -47,6 +47,7 @@ namespace Shop.WebApp.Extensions
 								builder.Configuration
 									.GetConnectionString("DefaultConnection")));
 			builder.Services.AddScoped<IProductRepository, ProductRepository>();
+			builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 			builder.Services.AddScoped<IMediaManager, LocalFileSystemMediaManager>();
 			builder.Services.AddScoped<ITimeProvider, LocalTimeProvider>();
 			return builder;

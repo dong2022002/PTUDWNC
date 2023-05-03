@@ -1,45 +1,45 @@
 <template>
   <div class="feature-products">
     <div class="d-flex justify-content-between ms-3">
-      <div class="fs-6 mb-4 fw-bold">Gợi ý hôm nay</div>
+      <div class="fs-6 fw-bold">Gợi ý hôm nay</div>
     </div>
     <el-row class="ms-3">
       <el-col
-        v-for="(o, index) in 4"
-        :key="o"
+        v-for="(product, index) in listProducts.data"
+        :key="product.id"
         :span="5"
-        :offset="index > 0 ? 1 : 0"
+        :offset="index == 0 || index == 4 ? 0 : 1"
       >
-        <product-card />
-      </el-col>
-    </el-row>
-    <el-row class="ms-3 mt-3">
-      <el-col
-        v-for="(o, index) in 4"
-        :key="o"
-        :span="5"
-        :offset="index > 0 ? 1 : 0"
-      >
-        <product-card />
+        <product-card class="mt-4" :product="product" />
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-import { DArrowRight } from '@element-plus/icons-vue'
-import ProductCard from './ProductCard.vue'
+import { DArrowRight } from "@element-plus/icons-vue";
+import { reactive } from "vue";
+import { getRandomProduct } from "../../services/ProductRepository";
+import ProductCard from "./ProductCard.vue";
 
 export default {
   components: {
     DArrowRight,
-    ProductCard
+    ProductCard,
   },
   setup() {
-
-  }
-}
+    let listProducts = reactive({});
+    getRandomProduct(8).then((data) => {
+      if (data) {
+        listProducts.data = data;
+        console.log(listProducts.data);
+      }
+    });
+    return {
+      listProducts,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -55,6 +55,4 @@ export default {
 .more {
   color: var(--text);
 }
-
 </style>
-

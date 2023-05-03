@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using Shop.Core.DTO;
 using Shop.Core.Entities;
+using Shop.WebApi.Models.Category;
 using Shop.WebApi.Models.Products;
 
 namespace Shop.WebApi.Mapsters
@@ -12,6 +13,9 @@ namespace Shop.WebApi.Mapsters
 
 			config.NewConfig<ProductFilterModel, ProductQuery>();
 			config.NewConfig<Product, ProductsDto>();
+
+
+			config.NewConfig<ProductCategory, ProductCategoryDto>();
 
 
 		}

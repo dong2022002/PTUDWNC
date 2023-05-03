@@ -1,5 +1,5 @@
 <template>
-  <div class="feature-products ">
+  <div class="feature-products">
     <div class="d-flex justify-content-between ms-3">
       <div class="fs-6 mb-4 fw-bold">Hàng mới về</div>
       <a href="#" class="text-decoration-none">
@@ -13,27 +13,38 @@
     </div>
     <el-row class="ms-3">
       <el-col
-        v-for="(o, index) in 4"
-        :key="o"
+        v-for="(product, index) in listProducts.data"
+        :key="product.id"
         :span="5"
         :offset="index > 0 ? 1 : 0"
       >
-       <product-card />
+        <product-card :product="product" />
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-import { DArrowRight } from '@element-plus/icons-vue'
+import { DArrowRight } from "@element-plus/icons-vue";
+import { reactive } from "vue";
+import { getNewestProducts } from "../../services/ProductRepository";
 export default {
   components: {
-    DArrowRight
+    DArrowRight,
   },
   setup() {
-  }
-}
+    let listProducts = reactive({});
+    getNewestProducts(4).then((data) => {
+      if (data) {
+        listProducts.data = data;
+        console.log(listProducts.data);
+      }
+    });
+    return {
+      listProducts,
+    };
+  },
+};
 </script>
 
 <style scoped>

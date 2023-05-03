@@ -1,5 +1,5 @@
 <template>
-  <div class="feature-products">
+  <div class="feature-products" v-if="loading">
     <div class="d-flex justify-content-between ms-3">
       <div class="fs-6 mb-4 fw-bold">Sản phẩm nổi bật</div>
       <a href="#" class="text-decoration-none">
@@ -13,31 +13,44 @@
     </div>
     <el-row class="ms-3">
       <el-col
-        v-for="(o, index) in 4"
-        :key="o"
+        v-for="(product, index) in listProducts.data"
+        :key="product.id"
         :span="5"
         :offset="index > 0 ? 1 : 0"
       >
-        <product-card />
+        <product-card :product="product" />
       </el-col>
     </el-row>
   </div>
+  <div class="loading" v-else>Loading...</div>
 </template>
 
 <script>
-import { ref } from 'vue'
-import { DArrowRight } from '@element-plus/icons-vue'
-import ProductCard from './ProductCard.vue'
-
+import { DArrowRight } from "@element-plus/icons-vue";
+import { reactive, ref } from "vue";
+import { getFeaturedProducts } from "../../services/ProductRepository";
+import ProductCard from "./ProductCard.vue";
 export default {
   components: {
     DArrowRight,
-    ProductCard
+    ProductCard,
   },
   setup() {
-
-  }
-}
+    let loading = ref(true);
+    let listProducts = reactive({});
+    getFeaturedProducts(4).then((data) => {
+      if (data) {
+        listProducts.data = data;
+        console.log(listProducts.data);
+        loading = false;
+      }
+    });
+    return {
+      listProducts,
+      loading,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -53,5 +66,4 @@ export default {
 .more {
   color: var(--text);
 }
-
 </style>

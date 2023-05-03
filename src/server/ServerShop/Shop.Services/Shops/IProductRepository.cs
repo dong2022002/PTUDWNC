@@ -38,7 +38,7 @@ namespace Shop.Services.Shops
 	
 
 		//getProductRandom
-		Task<IList<Product>> getProductRandom(int number, CancellationToken cancellationToken=default);
+		Task<IList<T>> getProductRandom<T>(int number, Func<IQueryable<Product>, IQueryable<T>> mapper, CancellationToken cancellationToken=default);
 
 		Task IncreaseViewCountAsync(
 			int productId,
