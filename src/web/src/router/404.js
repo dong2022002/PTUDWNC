@@ -1,7 +1,7 @@
 const Page404 = [{
     path: "/:pathMatch(.*)*",
     component: () =>
-        import ("../pages/ViewUser/404Page.vue"),
+        import ("../layout/404.vue"),
     children: [
 
     ]

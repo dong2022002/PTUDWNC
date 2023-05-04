@@ -13,7 +13,7 @@ namespace Shop.Core.Entities
 		public DateTime CreatedAt { get; set; }
 		public DateTime? ModifiedAt { get; set; }
 
-        public int SessionId { get; set; }
+        public int ShoppingSessionId { get; set; }
         public int ProductId { get; set; }
 
         public ShoppingSession ShoppingSession { get; set; }

@@ -11,14 +11,7 @@ namespace Shop.Data.Mapings
 {
 	public class UserPaymentMap : IEntityTypeConfiguration<UserPayment>
 	{
-		//public int Id { get; set; }
-		//public string PaymentType { get; set; }
-		//public string Provider { get; set; }
-		//public int AccountNo { get; set; }
-		//public DateTime Expiry { get; set; }
-		//public int UseId { get; set; }
-
-		//public User User { get; set; }
+		
 		public void Configure(EntityTypeBuilder<UserPayment> builder)
 		{
 			builder.ToTable("UserPayment");
@@ -41,7 +34,7 @@ namespace Shop.Data.Mapings
 
 			builder.HasOne(x => x.User)
 				.WithMany(x => x.UserPayments)
-				.HasForeignKey(x => x.UseId)
+				.HasForeignKey(x => x.UserId)
 				.HasConstraintName("FK_User_UserPayments")
 				.OnDelete(DeleteBehavior.Cascade);
 		}

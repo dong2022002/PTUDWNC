@@ -28,7 +28,7 @@ namespace Shop.Data.Mapings
 
 			builder.HasOne(x => x.ShoppingSession)
 				.WithMany(x => x.Carts)
-				.HasForeignKey(x => x.SessionId)
+				.HasForeignKey(x => x.ShoppingSessionId)
 				.HasConstraintName("FK_CartItem_Sessions")
 				.OnDelete(DeleteBehavior.Cascade);
 			builder.HasOne(x => x.Product)

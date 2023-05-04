@@ -23,15 +23,22 @@ namespace Shop.Data.Mapings
 				.IsRequired()
 				.HasMaxLength(50);
 
+			builder.Property(x => x.Slug)
+				.IsRequired()
+				.HasMaxLength(100);
+
 			builder.Property(x => x.Description)
 				.IsRequired()
 				.HasMaxLength(100);
 
-			builder.Property(x => x.SKU)
+			builder.Property(x => x.ImageUrl)
 				.IsRequired()
 				.HasMaxLength(100);
 
 			builder.Property(x => x.Price)
+				.HasDefaultValue(0);
+
+			builder.Property(x => x.viewCount)
 				.HasDefaultValue(0);
 
 			builder.Property(x => x.CreatedAt)
@@ -43,7 +50,7 @@ namespace Shop.Data.Mapings
 
 			builder.HasOne(x => x.ProductCategory)
 				.WithMany(x => x.Products)
-				.HasForeignKey(x => x.CategoryId)
+				.HasForeignKey(x => x.ProductCategoryId)
 				.HasConstraintName("FK_ProductCategory_Products")
 				.OnDelete(DeleteBehavior.Cascade);
 

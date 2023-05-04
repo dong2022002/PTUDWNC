@@ -14,8 +14,8 @@ namespace Shop.Core.Entities
         public double DiscountPercent { get; set; }
         public bool Active { get; set; }
 		public DateTime CreatedAt { get; set; }
-		public DateTime ModifiedAt { get; set; }
-		public DateTime DeletedAt { get; set; }
+		public DateTime? ModifiedAt { get; set; }
+		public DateTime? DeletedAt { get; set; }
 
         public IList<Product> Products { get; set; }
     }

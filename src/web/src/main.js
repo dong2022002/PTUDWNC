@@ -1,43 +1,28 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import router from './router/index.js'
-import axios from 'axios'
-window.axios = axios;
-import "bootstrap/dist/css/bootstrap.min.css"
-import 'bootstrap/dist/js/bootstrap.js';
-
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-    Checkbox,
-    Input,
-    Select,
-    Avatar,
-    Table,
-    Card,
-    Menu,
-    List,
-    Drawer,
-    Button,
-    message
-} from 'ant-design-vue';
+  faCcJcb,
+  faCcPaypal,
+  faCcVisa,
+  faFacebook,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { createPinia } from "pinia";
+import { createApp } from "vue";
+import TextClamp from "vue3-text-clamp";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import App from "./App.vue";
+import router from "./router/index.js";
+import "./style.css";
+library.add(faCcPaypal, faCcVisa, faCcJcb, faFacebook, faYoutube, faTwitter);
 
-import App from './App.vue';
-import './static/fontawesome/css/all.min.css';
-
-import 'ant-design-vue/dist/antd.css';
-const app = createApp(App);
-
-app.use(createPinia());
-app.use(router);
-app.use(Checkbox);
-app.use(Input);
-app.use(Select);
-app.use(Avatar);
-app.use(Table);
-app.use(Card);
-app.use(Menu);
-app.use(List);
-app.use(Button);
-app.use(Drawer);
-app.mount('#app');
-
-app.config.globalProperties.$message = message;
+import axios from "axios";
+import VueAxios from "vue-axios";
+createApp(App)
+  .use(createPinia())
+  .use(VueAxios, axios)
+  .use(router)
+  .use(TextClamp)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount("#app");

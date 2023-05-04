@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\0d3a6564639d45afb3c98e5e79d85e6d.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\0d3a6564639d45afb3c98e5e79d85e6d.png"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\5972f9f23081403e9996ebaac3ccdb31.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\5972f9f23081403e9996ebaac3ccdb31.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\79c933e2a88b43cdb558012b3bb626d2.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\79c933e2a88b43cdb558012b3bb626d2.png"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\8cf4742ddf4a448e88aa09083953643d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\8cf4742ddf4a448e88aa09083953643d.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\98592990584046aab3d6a535e6690156.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\98592990584046aab3d6a535e6690156.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\ddbc5ca7448c4dcc96e9107fb725c7f6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\ddbc5ca7448c4dcc96e9107fb725c7f6.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\default.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\default.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Shop.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Shop.WebApi.props",
+      "PackagePath": "build\\Shop.WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Shop.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\Shop.WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Shop.WebApi.props",
+      "PackagePath": "buildTransitive\\Shop.WebApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

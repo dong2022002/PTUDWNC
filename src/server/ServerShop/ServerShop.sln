@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Data", "Shop.Data\Shop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Services", "Shop.Services\Shop.Services.csproj", "{59FFB415-5A7E-41F9-8624-62A167271CB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WinApp", "Shop.WinApp\Shop.WinApp.csproj", "{45E89FE7-702B-43C6-923F-1C73A4A8F127}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.WinApp", "Shop.WinApp\Shop.WinApp.csproj", "{45E89FE7-702B-43C6-923F-1C73A4A8F127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WebApi", "Shop.WebApi\Shop.WebApi.csproj", "{596C5673-B9B3-43CC-BA08-7A54AF6759DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{45E89FE7-702B-43C6-923F-1C73A4A8F127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45E89FE7-702B-43C6-923F-1C73A4A8F127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45E89FE7-702B-43C6-923F-1C73A4A8F127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596C5673-B9B3-43CC-BA08-7A54AF6759DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596C5673-B9B3-43CC-BA08-7A54AF6759DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596C5673-B9B3-43CC-BA08-7A54AF6759DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596C5673-B9B3-43CC-BA08-7A54AF6759DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

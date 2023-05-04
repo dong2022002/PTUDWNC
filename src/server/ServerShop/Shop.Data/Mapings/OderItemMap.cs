@@ -27,7 +27,7 @@ namespace Shop.Data.Mapings
 
 			builder.HasOne(x => x.OrderDetail)
 				.WithMany(x => x.OrderItems)
-				.HasForeignKey(x => x.OrderId)
+				.HasForeignKey(x => x.OrderDetailId)
 				.HasConstraintName("FK_OrderDetail_OrderItems")
 				.OnDelete(DeleteBehavior.Cascade);
 
