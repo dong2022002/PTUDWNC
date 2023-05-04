@@ -9,29 +9,57 @@
         ><div class="grid-content ep-bg-purple" />
         <div class="feature-products">
           <div class="d-flex justify-content-between ms-3">
-            <div class="fs-6 mb-4 fw-bold">Sản phẩm nổi bật</div>
+            <div class="fs-6 mb-2 fw-bold">{{ filter.categoryslug }}</div>
             <a href="#" class="text-decoration-none"> </a>
           </div>
           <el-row>
-            <el-col  v-for="index in 100" :key="index" :span="5" :offset="1">
-              <product-card class="mt-4" />
+            <el-col
+              v-for="(product, index) in listProducts.data"
+              :key="product.id"
+              :span="5"
+              :offset="1"
+            >
+              <product-card :product="product" class="m-1" />
             </el-col>
           </el-row>
         </div>
-        <div  class="bottom-main"></div>
+        <div class="bottom-main"></div>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import SideBar from '../../components/main/SideBar.vue'
-
+import { reactive, watch } from "vue";
+import SideBar from "../../components/main/SideBar.vue";
+import { getProductsFilter } from "../../services/ProductRepository";
+import { useProductFilter } from "../../stores/product-filter";
 export default {
   components: {
-    SideBar
-  }
-}
+    SideBar,
+  },
+  setup() {
+    const filter = useProductFilter();
+    console.log("filter:" + filter.categoryslug);
+    const listProducts = reactive({});
+    const getProducts = () => {
+      getProductsFilter("", filter.categoryslug).then((data) => {
+        if (data) {
+          listProducts.data = data.items;
+        }
+      });
+    };
+    getProducts();
+    watch(filter, () => {
+      getProducts();
+    });
+
+    return {
+      listProducts,
+      filter,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -47,7 +75,7 @@ export default {
   width: 100%;
   background: #fff;
 }
-.bottom-main{
+.bottom-main {
   margin-bottom: 64px;
 }
 </style>

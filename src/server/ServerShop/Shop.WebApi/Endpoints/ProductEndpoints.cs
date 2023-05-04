@@ -44,6 +44,10 @@ namespace Shop.WebApi.Endpoints
 				.WithName("GetRandomProducts")
 				.Produces<ApiResponse<IList<ProductsDto>>>();
 
+			routerGroupBuilder.MapGet("/{id:int}", GetProductDetails)
+				.WithName("GetProductDetails")
+				.Produces<ApiResponse<ProductsDto>>();
+
 
 			routerGroupBuilder.MapPost(
 				"/",
@@ -83,6 +87,20 @@ namespace Shop.WebApi.Endpoints
 			return Results.Ok(ApiResponse.Success(products));
 
 		}
+
+		private static async Task<IResult> GetProductDetails(
+			int id,
+			IMapper mapper,
+			IProductRepository productRepository)
+		{
+			var product = await productRepository
+				.GetProductById(id);
+		
+			return product == null
+				? Results.Ok(ApiResponse.Fail(HttpStatusCode.NotFound, $"Không tìm thấy sản phẩm có mã số {id}"))
+				: Results.Ok(ApiResponse.Success(mapper.Map<ProductsDto>(product)));
+		}
+
 
 		private static async Task<IResult> GetNewProducts(
 			int limit,

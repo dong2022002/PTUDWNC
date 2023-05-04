@@ -12,7 +12,9 @@ namespace Shop.WebApi.Mapsters
 		{
 
 			config.NewConfig<ProductFilterModel, ProductQuery>();
-			config.NewConfig<Product, ProductsDto>();
+			config.NewConfig<Product, ProductsDto>()
+					.Ignore(dest => dest.ProductCategory.Products)
+					.Ignore(dest => dest.Discount.Products);
 
 
 			config.NewConfig<ProductCategory, ProductCategoryDto>();

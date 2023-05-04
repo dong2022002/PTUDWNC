@@ -1,22 +1,27 @@
 <template>
-  <el-card :body-style="{ padding: '16px 0 0 0' }">
-    <img :src="img" class="image" />
-    <div style="padding: 14px">
-      <text-clamp :text="title" class="title" :max-lines="2" />
-      <div class="d-flex">
-        <el-rate class="m-0" disabled show-score max="1" v-model="stats" />
-        <el-divider direction="vertical" class="mt-2" />
-        <div class="buy mt-2">Đã bán 500</div>
-      </div>
+  <router-link
+    class="text-decoration-none"
+    :to="{ name: 'product', params: { id: idProduct } }"
+  >
+    <el-card :body-style="{ padding: '16px 0 0 0' }">
+      <img :src="img" class="image" />
+      <div style="padding: 14px">
+        <text-clamp :text="title" class="title" :max-lines="2" />
+        <div class="d-flex">
+          <el-rate class="m-0" disabled show-score :max="1" v-model="stats" />
+          <el-divider direction="vertical" class="mt-2" />
+          <div class="buy mt-2">Đã bán 500</div>
+        </div>
 
-      <div class="bottom">
-        <div class="price">
-          {{ formatPrice(price) }}
-          <span class="discount">-{{ discount }}%</span>
+        <div class="bottom">
+          <div class="price">
+            {{ formatPrice(price) }}
+            <span class="discount">-{{ discount }}%</span>
+          </div>
         </div>
       </div>
-    </div>
-  </el-card>
+    </el-card>
+  </router-link>
 </template>
 
 <script>
@@ -36,11 +41,14 @@ export default {
       const img =
         product.imageUrl ??
         "https://localhost:7277/uploads/pictures/default.jpg";
+
       const discount = product.discount.discountPercent * 100;
-      const price = product.price * product.discount.discountPercent;
+      const price =
+        product.price - product.price * product.discount.discountPercent;
       const stats = ref(3.7);
       const title = product.name;
-      return { stats, title, img, discount, price, formatPrice };
+      const idProduct = product.id;
+      return { stats, title, img, discount, price, formatPrice, idProduct };
     }
   },
 };

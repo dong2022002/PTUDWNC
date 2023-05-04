@@ -14,7 +14,7 @@ namespace Shop.Services.Shops
 	{
 		Task<IList<Product>> GetAllProducts(CancellationToken cancellationToken = default);
 		//getProductId
-		Task<Product> GetProductById(int id,CancellationToken cancellationToken =default);
+		Task<Product> GetProductById(int id, CancellationToken cancellationToken =default);
 
 		//getProductFeatured
 		Task<IList<T>> GetProductFeatured<T>(

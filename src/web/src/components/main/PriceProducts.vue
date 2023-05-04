@@ -36,11 +36,10 @@ export default {
     ProductCard,
   },
   setup() {
-    let listProducts = reactive({});
+    const listProducts = reactive({});
     getDiscountProduct(4).then((data) => {
       if (data) {
         listProducts.data = data;
-        console.log(listProducts.data);
       }
     });
     return {

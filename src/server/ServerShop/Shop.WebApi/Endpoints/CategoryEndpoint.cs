@@ -27,6 +27,9 @@ namespace Shop.WebApi.Endpoints
 			routerGroupBuilder.MapGet("/", GetCategories)
 				.WithName("GetCategories")
 				.Produces<ApiResponse<IList<ProductCategoryDto>>>();
+			routerGroupBuilder.MapGet("/randomCategories/{limit:int}", GetRandomCategories)
+				.WithName("GetRandomCategories")
+				.Produces<ApiResponse<IList<ProductCategoryDto>>>();
 
 			return app;
 		}
@@ -35,14 +38,23 @@ namespace Shop.WebApi.Endpoints
 
 		private static async Task<IResult> GetCategories(
 			ICategoryRepository categoryRepository,
-			IMapper mapper
-			)
+			IMapper mapper)
 		{
 			var categories = await
 				categoryRepository.GetAllCategoriesProduct(
 					categories => categories.ProjectToType<ProductCategoryDto>());
 
 			return Results.Ok(ApiResponse.Success(categories));
+		}
+
+		private static async Task<IResult> GetRandomCategories(
+			int limit,
+			ICategoryRepository categoryRepository)
+		{
+			var categories = await categoryRepository
+				.GetRandomCategories(limit, categories => categories.ProjectToType<ProductCategoryDto>());
+			return Results.Ok(ApiResponse.Success(categories));
+
 		}
 
 

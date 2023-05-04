@@ -38,14 +38,16 @@
       <el-row>
         <el-col :span="7" class="center-col"
           ><div class="grid-content ep-bg-purple" />
-          <el-button
-            size="large"
-            type="primary"
-            text
-            class="fs-6"
-            :icon="HomeFilled"
-            >Trang chủ</el-button
-          >
+          <router-link to="/">
+            <el-button
+              size="large"
+              type="primary"
+              text
+              class="fs-6"
+              :icon="HomeFilled"
+              >Trang chủ</el-button
+            >
+          </router-link>
         </el-col>
         <el-col :span="7" class="center-col"
           ><div class="grid-content ep-bg-purple" />
@@ -72,12 +74,16 @@
     <el-col :span="12"
       ><div class="grid-content ep-bg-purple" />
       <div class="d-flex justify-content-evenly bottom-menu">
-        <a href="" class="text-decoration-none text_bottom-menu">Máy tính</a>
-        <a href="" class="text-decoration-none text_bottom-menu">LapTop</a>
-        <a href="" class="text-decoration-none text_bottom-menu">Ổ cứng</a>
-        <a href="" class="text-decoration-none text_bottom-menu">GPU</a>
-        <a href="" class="text-decoration-none text_bottom-menu">Tản nhiệt</a>
-        <a href="" class="text-decoration-none text_bottom-menu">Phụ kiện</a>
+        <div
+          v-for="(category, index) in listCategories.data"
+          :key="category.id"
+        >
+          <a
+            :href="'products/' + category.slug"
+            class="text-decoration-none text_bottom-menu"
+            >{{ category.name }}</a
+          >
+        </div>
       </div>
     </el-col>
     <el-col :span="9"><div class="grid-content ep-bg-purple" /></el-col>
@@ -92,7 +98,8 @@ import {
   ShoppingCart,
   UserFilled,
 } from "@element-plus/icons-vue";
-import { ref } from "vue";
+import { reactive, ref } from "vue";
+import { getRandomCategories } from "../../services/CategoriesRepository";
 export default {
   components: {
     Search,
@@ -106,8 +113,15 @@ export default {
     const input3 = ref("");
 
     const select = ref("");
+    const listCategories = reactive({});
+    getRandomCategories(5).then((data) => {
+      if (data) {
+        listCategories.data = data;
+      }
+    });
     return {
       activeIndex,
+      listCategories,
       handleSelect,
       input3,
       select,

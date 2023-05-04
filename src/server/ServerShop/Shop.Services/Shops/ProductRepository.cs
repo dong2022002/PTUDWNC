@@ -67,10 +67,11 @@ namespace Shop.Services.Shops
 
 		public async Task<Product> GetProductById(int id, CancellationToken cancellationToken = default)
 		{
-			return await _context.Set<Product>()
-				.Include(x => x.Discount)
+			return await  _context.Set<Product>()
 				.Include(x => x.ProductCategory)
-				.FirstOrDefaultAsync(x => x.Id == id,cancellationToken);
+				.Include(x => x.Discount)
+				.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+			
 		}
 
 		

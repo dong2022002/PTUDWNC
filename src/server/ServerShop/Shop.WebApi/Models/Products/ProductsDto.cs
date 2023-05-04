@@ -15,9 +15,7 @@ namespace Shop.WebApi.Models.Products
 		public DateTime? ModifiedAt { get; set; }
 		public DateTime? DeletedAt { get; set; }
 
-		public int ProductCategoryId { get; set; }
 		public int Quantity { get; set; }
-		public int DiscountId { get; set; }
 
 		public CartItem CartItem { get; set; }
 		public Discount Discount { get; set; }

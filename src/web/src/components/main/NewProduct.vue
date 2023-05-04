@@ -33,11 +33,10 @@ export default {
     DArrowRight,
   },
   setup() {
-    let listProducts = reactive({});
+    const listProducts = reactive({});
     getNewestProducts(4).then((data) => {
       if (data) {
         listProducts.data = data;
-        console.log(listProducts.data);
       }
     });
     return {

@@ -10,7 +10,7 @@
         :span="5"
         :offset="index == 0 || index == 4 ? 0 : 1"
       >
-        <product-card class="mt-4" :product="product" />
+        <product-card class="m-2" :product="product" />
       </el-col>
     </el-row>
   </div>
@@ -28,11 +28,10 @@ export default {
     ProductCard,
   },
   setup() {
-    let listProducts = reactive({});
+    const listProducts = reactive({});
     getRandomProduct(8).then((data) => {
       if (data) {
         listProducts.data = data;
-        console.log(listProducts.data);
       }
     });
     return {
