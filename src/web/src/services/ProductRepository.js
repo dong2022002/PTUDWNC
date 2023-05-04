@@ -23,12 +23,17 @@ export async function getProductsFilter(
   keyword = "",
   categorySlug = "",
   pageSize = 10,
-  pageNumber = 1
+  pageNumber = 1,
+  sortColumn = "",
+  sortOrder = "desc"
 ) {
   let url = new URL(ApiUrl + `/api/products`);
   keyword !== "" && url.searchParams.append("Keyword", keyword);
   categorySlug !== "" && url.searchParams.append("CategorySlug", categorySlug);
+  sortColumn !== "" && url.searchParams.append("SortColumn", sortColumn);
+  sortOrder !== "" && url.searchParams.append("SortOrder", sortOrder);
   url.searchParams.append("PageSize", pageSize);
   url.searchParams.append("PageNumber", pageNumber);
+  console.log(url.href);
   return get_api(url.href);
 }

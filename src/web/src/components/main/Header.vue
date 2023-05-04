@@ -78,11 +78,13 @@
           v-for="(category, index) in listCategories.data"
           :key="category.id"
         >
-          <a
-            :href="'products/' + category.slug"
+          <router-link
+            @click="handleSlugCategory(category.slug)"
             class="text-decoration-none text_bottom-menu"
-            >{{ category.name }}</a
+            :to="{ name: 'products', params: { slug: category.slug } }"
           >
+            {{ category.name }}
+          </router-link>
         </div>
       </div>
     </el-col>
@@ -100,12 +102,14 @@ import {
 } from "@element-plus/icons-vue";
 import { reactive, ref } from "vue";
 import { getRandomCategories } from "../../services/CategoriesRepository";
+import { useProductFilter } from "../../stores/product-filter";
 export default {
   components: {
     Search,
     ShoppingCart,
   },
   setup() {
+    const filter = useProductFilter();
     const activeIndex = ref("1");
     const handleSelect = (key, keyPath) => {
       console.log(key, keyPath);
@@ -119,7 +123,11 @@ export default {
         listCategories.data = data;
       }
     });
+    const handleSlugCategory = (slug) => {
+      filter.updateCategorySlug(slug);
+    };
     return {
+      handleSlugCategory,
       activeIndex,
       listCategories,
       handleSelect,

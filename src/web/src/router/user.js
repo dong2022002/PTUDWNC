@@ -13,6 +13,7 @@ const user = [
         name: "products",
         component: () => import("../pages/main/ProductsList.vue"),
       },
+
       {
         path: "/product/:id",
         name: "product",

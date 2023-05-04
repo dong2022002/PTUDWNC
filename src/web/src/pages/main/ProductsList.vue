@@ -40,15 +40,24 @@ export default {
   },
   setup() {
     const filter = useProductFilter();
-    console.log("filter:" + filter.categoryslug);
     const listProducts = reactive({});
+
     const getProducts = () => {
-      getProductsFilter("", filter.categoryslug).then((data) => {
+      getProductsFilter(
+        "",
+        filter.categoryslug,
+        10,
+        1,
+        filter.SortColumn,
+        filter.SortOrder
+      ).then((data) => {
         if (data) {
           listProducts.data = data.items;
+          console.log(filter.categoryslug);
         }
       });
     };
+
     getProducts();
     watch(filter, () => {
       getProducts();
