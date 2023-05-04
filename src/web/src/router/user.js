@@ -15,6 +15,24 @@ const user = [
       },
 
       {
+        path: "/products/:slug/:keyword",
+        name: "productsKeywords",
+        redirect: (to) => {
+          return {
+            path: "/products",
+            query: { k: to.params.keyword, slug: to.params.slug },
+          };
+        },
+        component: () => import("../pages/main/ProductsList.vue"),
+      },
+
+      {
+        path: "/products/",
+        name: "productQuery",
+        component: () => import("../pages/main/ProductsList.vue"),
+      },
+
+      {
         path: "/product/:id",
         name: "product",
         component: () => import("../pages/main/DetailProduct.vue"),

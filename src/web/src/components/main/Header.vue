@@ -8,26 +8,14 @@
       ><div class="grid-content ep-bg-purple" />
       <div>
         <el-input
-          v-model="input3"
+          v-model="keyword"
           size="large"
           placeholder="Nhập tìm kiếm "
           class="input-with-select"
         >
-          <template #prepend>
-            <el-select
-              size="large"
-              v-model="select"
-              class="select-input"
-              placeholder="Chọn"
-              style="width: 115px"
-            >
-              <el-option label="Restaurant" value="1" />
-              <el-option label="Order No." value="2" />
-              <el-option label="Tel" value="3" />
-            </el-select>
-          </template>
+          <template #prepend> </template>
           <template #append>
-            <el-button>
+            <el-button @click="handleKeyword(keyword)">
               <el-icon><search /></el-icon>
             </el-button>
           </template>
@@ -101,6 +89,7 @@ import {
   UserFilled,
 } from "@element-plus/icons-vue";
 import { reactive, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { getRandomCategories } from "../../services/CategoriesRepository";
 import { useProductFilter } from "../../stores/product-filter";
 export default {
@@ -111,10 +100,12 @@ export default {
   setup() {
     const filter = useProductFilter();
     const activeIndex = ref("1");
+    const route = useRoute();
+    const router = useRouter();
     const handleSelect = (key, keyPath) => {
       console.log(key, keyPath);
     };
-    const input3 = ref("");
+    const keyword = ref("");
 
     const select = ref("");
     const listCategories = reactive({});
@@ -126,16 +117,30 @@ export default {
     const handleSlugCategory = (slug) => {
       filter.updateCategorySlug(slug);
     };
+
+    const handleKeyword = (keyword) => {
+      if (keyword === "") return;
+      filter.updateKeyword(keyword);
+      router.push({
+        name: "productsKeywords",
+        params: {
+          slug: filter.categoryslug === "" ? "all" : filter.categoryslug,
+          keyword: keyword,
+        },
+      });
+    };
     return {
+      handleKeyword,
       handleSlugCategory,
       activeIndex,
       listCategories,
       handleSelect,
-      input3,
+      keyword,
       select,
       HomeFilled,
       UserFilled,
       Service,
+      filter,
     };
   },
 };

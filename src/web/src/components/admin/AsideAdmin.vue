@@ -6,9 +6,11 @@
     @select="handleSelect"
     text-color="#ced2cc"
     background-color="#545c64"
-    active-text-color="#0091d5"
+    active-text-color="#000"
   >
-    <div class="container-logo">LOGO</div>
+    <div class="container-logo">
+      <img src="../../../public/vite.svg" alt="" />
+    </div>
     <el-menu-item route="/admin/products" index="products">
       <el-icon><box /></el-icon>
       <span>Sản phẩm</span>
@@ -29,34 +31,34 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useMenu } from '../../stores/use-menu-admin.js'
-import { ref } from 'vue'
+import { defineComponent } from "vue";
+import { storeToRefs } from "pinia";
+import { useMenu } from "../../stores/use-menu-admin.js";
+import { ref } from "vue";
 import {
   Box,
   Menu as IconMenu,
   ShoppingCart,
   Setting,
-  Avatar
-} from '@element-plus/icons-vue'
+  Avatar,
+} from "@element-plus/icons-vue";
 export default defineComponent({
   components: {
     Box,
     IconMenu,
     ShoppingCart,
     Setting,
-    Avatar
+    Avatar,
   },
   setup() {
-    const menu = useMenu()
-    const index = ref('products')
+    const menu = useMenu();
+    const index = ref("products");
     const handleSelect = (key) => {
-      menu.onSelectedKeys(key)
-    }
-    return { index, handleSelect, ...storeToRefs(menu) }
-  }
-})
+      menu.onSelectedKeys(key);
+    };
+    return { index, handleSelect, ...storeToRefs(menu) };
+  },
+});
 </script>
 
 <style scoped>

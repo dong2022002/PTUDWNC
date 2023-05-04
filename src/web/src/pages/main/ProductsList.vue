@@ -41,10 +41,9 @@ export default {
   setup() {
     const filter = useProductFilter();
     const listProducts = reactive({});
-
     const getProducts = () => {
       getProductsFilter(
-        "",
+        filter.keyword,
         filter.categoryslug,
         10,
         1,
@@ -53,7 +52,6 @@ export default {
       ).then((data) => {
         if (data) {
           listProducts.data = data.items;
-          console.log(filter.categoryslug);
         }
       });
     };

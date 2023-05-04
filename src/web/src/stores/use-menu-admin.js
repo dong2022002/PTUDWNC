@@ -1,19 +1,18 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useMenu = defineStore('menuIdAdmin', {
-    state: () => ({
-        menuId: 1,
-    }),
+export const useMenu = defineStore("menuIdAdmin", {
+  state: () => ({
+    menuId: 1,
+  }),
 
-    actions: {
-        onSelectedKeys(data) {
-            this.menu = data;
-            console.log("Set menu ", data)
-        },
+  actions: {
+    onSelectedKeys(data) {
+      this.menu = data;
     },
-    getters: {
-        getMenu() {
-            return this.menuId
-        }
-    }
-})
+  },
+  getters: {
+    getMenu() {
+      return this.menuId;
+    },
+  },
+});

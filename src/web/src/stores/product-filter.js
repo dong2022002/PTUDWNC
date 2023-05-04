@@ -21,5 +21,11 @@ export const useProductFilter = defineStore("productFilter", {
     updateSortOrder(SortOrder) {
       this.SortOrder = SortOrder;
     },
+    $reset() {
+      this.keyword = "";
+      this.categoryslug = "";
+      this.SortColumn = "";
+      this.SortOrder = "desc";
+    },
   },
 });
