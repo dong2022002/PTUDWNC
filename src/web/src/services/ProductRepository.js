@@ -1,4 +1,4 @@
-import { ApiUrl, delete_api, get_api, post_api } from "./Method";
+import { ApiUrl, delete_api, get_api, post_api, put_api } from "./Method";
 export async function getFeaturedProducts(limit = 4) {
   return get_api(ApiUrl + `/api/products/featured/${limit}`);
 }
@@ -41,8 +41,12 @@ export async function getProductsFilter(
   return get_api(url.href);
 }
 
-export async function addOrUpdateProduct(formData) {
-  return await post_api(ApiUrl + `/api/products`, formData);
+export async function addOrUpdateProduct(formData, id) {
+  if (id > 0) {
+    return await put_api(ApiUrl + `/api/products`, formData);
+  } else {
+    return await post_api(ApiUrl + `/api/products`, formData);
+  }
 }
 
 export async function deleteProduct(id) {

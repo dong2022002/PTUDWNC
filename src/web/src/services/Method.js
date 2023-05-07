@@ -30,9 +30,9 @@ export async function post_api(your_api, formData) {
   }
 }
 
-export async function put_api(your_api) {
+export async function put_api(your_api, formData) {
   try {
-    const response = await axios.put(your_api);
+    const response = await axios.put(your_api, formData);
     const data = response.data;
     if (data.isSuccess) {
       return data.result;

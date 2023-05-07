@@ -2,7 +2,7 @@
 
 namespace Shop.WebApi.Models.Category
 {
-	public class ProductCategoryDto
+	public class CategoryDto
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }

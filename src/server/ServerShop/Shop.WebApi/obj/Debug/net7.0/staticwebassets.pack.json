@@ -5,12 +5,44 @@
       "PackagePath": "staticwebassets\\uploads\\pictures\\0d3a6564639d45afb3c98e5e79d85e6d.png"
     },
     {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\16651ffa4260443e98cab884069d0011.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\16651ffa4260443e98cab884069d0011.png"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\2b4256c0232049d5988669dcb4b0ca5b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\2b4256c0232049d5988669dcb4b0ca5b.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\4287aff1776147788a01919e672afb37.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\4287aff1776147788a01919e672afb37.png"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\44f0d72d993048d08c23a0b5a9eecc47.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\44f0d72d993048d08c23a0b5a9eecc47.jpeg"
+    },
+    {
       "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\5972f9f23081403e9996ebaac3ccdb31.jpg",
       "PackagePath": "staticwebassets\\uploads\\pictures\\5972f9f23081403e9996ebaac3ccdb31.jpg"
     },
     {
       "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\79c933e2a88b43cdb558012b3bb626d2.png",
       "PackagePath": "staticwebassets\\uploads\\pictures\\79c933e2a88b43cdb558012b3bb626d2.png"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\79cb4a67cbdc41089a89750693523a39.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\79cb4a67cbdc41089a89750693523a39.png"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\8145e7f9b7c943dfba72e3c5d859ca12.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\8145e7f9b7c943dfba72e3c5d859ca12.jpeg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\83c8c631affe44c5b5a4d90b382c54aa.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\83c8c631affe44c5b5a4d90b382c54aa.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\85b6d83e44e542b4930d315d04f78e0f.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\85b6d83e44e542b4930d315d04f78e0f.png"
     },
     {
       "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\8cf4742ddf4a448e88aa09083953643d.jpg",
@@ -21,12 +53,24 @@
       "PackagePath": "staticwebassets\\uploads\\pictures\\98592990584046aab3d6a535e6690156.jpg"
     },
     {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\9fbd2b6460734f37ae474a92be52360f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\9fbd2b6460734f37ae474a92be52360f.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\d8aae8503576473cae599108e7614d75.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\d8aae8503576473cae599108e7614d75.png"
+    },
+    {
       "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\ddbc5ca7448c4dcc96e9107fb725c7f6.jpg",
       "PackagePath": "staticwebassets\\uploads\\pictures\\ddbc5ca7448c4dcc96e9107fb725c7f6.jpg"
     },
     {
       "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\default.jpg",
       "PackagePath": "staticwebassets\\uploads\\pictures\\default.jpg"
+    },
+    {
+      "Id": "D:\\workspace\\vuejs\\web-ecommerce\\ecommerce-ui\\src\\server\\ServerShop\\Shop.WebApi\\wwwroot\\uploads\\pictures\\fb5283688ed943e48807cc488f2b613d.png",
+      "PackagePath": "staticwebassets\\uploads\\pictures\\fb5283688ed943e48807cc488f2b613d.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Shop.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",

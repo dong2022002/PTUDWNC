@@ -39,10 +39,12 @@
         </el-col>
         <el-col :span="7" class="center-col"
           ><div class="grid-content ep-bg-purple" />
-          <el-button size="large" class="fs-6" text :icon="Service"
-            >Liên hệ</el-button
-          ></el-col
-        >
+          <router-link to="/contact">
+            <el-button size="large" class="fs-6" text :icon="Service"
+              >Liên hệ</el-button
+            >
+          </router-link>
+        </el-col>
         <el-col :span="6" class="center-col"
           ><div class="grid-content ep-bg-purple" />
           <Login></Login>

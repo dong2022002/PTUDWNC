@@ -5,11 +5,11 @@
         <aside-admin />
       </el-aside>
       <el-container>
-        <el-header class="el-header">
+        <el-header @checkAdmin="checkAdmin" class="el-header">
           <header-admin />
         </el-header>
         <el-main>
-         <router-view></router-view>
+          <router-view></router-view>
         </el-main>
         <el-footer>
           <footer-admin />
@@ -19,9 +19,11 @@
   </div>
 </template>
 <script>
-import HeaderAdmin from '../components/admin/HeaderAdmin.vue'
-import AsideAdmin from '../components/admin/AsideAdmin.vue'
-import FooterAdmin from '../components/admin/FooterAdmin.vue'
+import { useRouter } from "vue-router";
+import AsideAdmin from "../components/admin/AsideAdmin.vue";
+import FooterAdmin from "../components/admin/FooterAdmin.vue";
+import HeaderAdmin from "../components/admin/HeaderAdmin.vue";
+import { useAdminAccount } from "../stores/accountAdmin";
 export default {
   components: {
     HeaderAdmin,
@@ -29,14 +31,28 @@ export default {
     FooterAdmin,
   },
   setup() {
-  }
-}
+    const storeAdmin = useAdminAccount();
+    const router = useRouter();
+
+    const checkAdmin = () => {
+      if (storeAdmin.username === "" && storeAdmin.password === "") {
+        router.replace({ name: "loginAdmin" });
+        console.log("logout");
+      }
+    };
+    checkAdmin();
+
+    return {
+      checkAdmin,
+    };
+  },
+};
 </script>
 <style scoped>
 .el-header {
   padding: 0 !important;
 }
-.el-footer{
+.el-footer {
   padding: 0 !important;
 }
 .container {
@@ -44,7 +60,7 @@ export default {
   margin: auto;
 }
 
-.el-main{
+.el-main {
   background: #eef1f4;
   height: 100vh;
 }

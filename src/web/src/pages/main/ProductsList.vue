@@ -3,17 +3,18 @@
     <el-row>
       <el-col :span="5"
         ><div class="grid-content ep-bg-purple" />
-        <side-bar class="sider-bar" />
+        <side-bar />
       </el-col>
       <el-col :span="17"
         ><div class="grid-content ep-bg-purple" />
         <div class="feature-products">
           <div class="d-flex justify-content-between ms-3">
-            <div class="fs-6 mb-2 fw-bold">{{ filter.categoryslug }}</div>
+            <div class="fs-6 mb-2 fw-bold">{{ nameCategory }}</div>
             <a href="#" class="text-decoration-none"> </a>
           </div>
           <el-row>
             <el-col
+              v-if="hasData"
               v-for="(product, index) in listProducts.data"
               :key="product.id"
               :span="5"
@@ -21,6 +22,11 @@
             >
               <product-card :product="product" class="m-1" />
             </el-col>
+            <div class="d-flex justify-content-between notify" v-else>
+              <el-text size="small" class="d-block text-notify" type="small"
+                >Hiện chưa có sản phẩm nào</el-text
+              >
+            </div>
           </el-row>
         </div>
         <div class="bottom-main"></div>
@@ -30,8 +36,9 @@
 </template>
 
 <script>
-import { reactive, watch } from "vue";
+import { reactive, ref, watch } from "vue";
 import SideBar from "../../components/main/SideBar.vue";
+import { getCategoryBySlug } from "../../services/CategoriesRepository";
 import { getProductsFilter } from "../../services/ProductRepository";
 import { useProductFilter } from "../../stores/product-filter";
 export default {
@@ -41,7 +48,17 @@ export default {
   setup() {
     const filter = useProductFilter();
     const listProducts = reactive({});
+    const nameCategory = ref("");
+    const hasData = ref(false);
+
+    const getNameCategory = () => {
+      getCategoryBySlug(filter.categoryslug).then((data) => {
+        nameCategory.value = data.name;
+      });
+    };
     const getProducts = () => {
+      window.scrollTo(0, 0);
+
       getProductsFilter(
         filter.keyword,
         filter.categoryslug,
@@ -52,16 +69,27 @@ export default {
       ).then((data) => {
         if (data) {
           listProducts.data = data.items;
+
+          if (listProducts.data.length > 0) {
+            hasData.value = true;
+          } else {
+            hasData.value = false;
+          }
         }
       });
     };
-
+    if (filter.categoryslug !== "") {
+      getNameCategory();
+    }
     getProducts();
     watch(filter, () => {
       getProducts();
+      getNameCategory();
     });
 
     return {
+      hasData,
+      nameCategory,
       listProducts,
       filter,
     };
@@ -84,5 +112,12 @@ export default {
 }
 .bottom-main {
   margin-bottom: 64px;
+}
+.notify {
+  width: 100%;
+  height: 20vh;
+}
+.text-notify {
+  margin: auto;
 }
 </style>

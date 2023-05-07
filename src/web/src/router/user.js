@@ -9,6 +9,11 @@ const user = [
         component: () => import("../pages/main/index.vue"),
       },
       {
+        path: "/contact",
+        name: "contact",
+        component: () => import("../pages/main/ContactPage.vue"),
+      },
+      {
         path: "/products/:slug",
         name: "products",
         component: () => import("../pages/main/ProductsList.vue"),

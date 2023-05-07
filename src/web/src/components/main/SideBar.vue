@@ -2,7 +2,7 @@
   <div class="siderbar">
     <div class="h6">Nổi bật</div>
     <el-menu
-      router="true"
+      :router="true"
       default-active="feature-product"
       class="el-menu"
       @select="handleSelectOutStanding"
@@ -29,7 +29,7 @@
   <div class="siderbar mb-4">
     <div class="h6">Danh mục</div>
     <el-menu
-      router="true"
+      :router="true"
       class="el-menu"
       @select="handleSelect"
       background-color="#fff"

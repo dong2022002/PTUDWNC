@@ -24,6 +24,24 @@ namespace Shop.Data.Seeders
 			var discounts = AddDiscounts();
 			var products =  AddProducts(categories, discounts);
 			var users = AddUsers();
+			var adminType = AddAdminType();
+			var admin = AddAdmin();
+			var payment = AddPayment();
+		}
+
+		private object AddPayment()
+		{
+			throw new NotImplementedException();
+		}
+
+		private object AddAdminType()
+		{
+			throw new NotImplementedException();
+		}
+
+		private object AddAdmin()
+		{
+			throw new NotImplementedException();
 		}
 
 		private IList<User> AddUsers()

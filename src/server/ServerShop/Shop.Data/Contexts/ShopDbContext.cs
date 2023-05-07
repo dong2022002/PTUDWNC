@@ -15,6 +15,7 @@ namespace Shop.Data.Contexts
 		public DbSet<CartItem> CartItems { get; set; }
 		public DbSet<Discount> Discounts { get; set; }
 		public DbSet<OrderItem> OrderItems { get; set; }
+		public DbSet<OrderDetail> OrderDetail { get; set; }
 		public DbSet<Product> Products { get; set; }
 		public DbSet<ProductCategory> ProductCategories { get; set; }
 		public DbSet<ShoppingSession> ShoppingSessions { get; set; }

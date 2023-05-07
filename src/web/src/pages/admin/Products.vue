@@ -2,27 +2,32 @@
   <!-- Main -->
   <div class="d-flex justify-content-between">
     <h5 class="title">Danh sách sản phẩm</h5>
-    <EditProduct @updateTable="updateTable" />
+    <router-link :to="{ name: 'edit-product' }">
+      <el-button class="mt-2 me-4" type="success"> Thêm sản phẩm </el-button>
+    </router-link>
   </div>
   <el-table :data="filterTableData" style="width: 100%">
-    <el-table-column label="Tên sản phẩm" prop="name" width="250" />
-    <el-table-column label="Mô tả" prop="description" width="250" />
+    <el-table-column label="Tên sản phẩm" prop="name" width="350" />
+    <el-table-column label="Mô tả" prop="description" width="350" />
     <el-table-column label="Giá" prop="price" width="100" />
     <el-table-column label="Số lượng" prop="quantity" width="90" />
-    <el-table-column
-      label="Giảm giá"
-      prop="discount.discountPercent"
-      width="90"
-    />
-    <el-table-column label="Loại" prop="productCategory.name" width="80" />
+    <el-table-column label="Giảm giá" prop="discount.name" width="90" />
+    <el-table-column label="Loại" prop="productCategory.name" width="130" />
     <el-table-column fixed="right" width="150">
       <template #header>
-        <el-input v-model="search" size="small" placeholder="Type to search" />
+        <el-input
+          v-model="search"
+          size="small"
+          :z-index="3000"
+          placeholder="Type to search"
+        />
       </template>
       <template #default="scope">
-        <el-button size="small" @click="handleEdit(scope.$index, scope.row)"
-          >Sửa</el-button
-        >
+        <router-link :to="{ name: 'edit-product' }">
+          <el-button size="small" class="me-4" @click="handleEdit(scope.row)">
+            sửa
+          </el-button>
+        </router-link>
         <el-popconfirm
           width="220"
           confirm-button-text="OK"
@@ -52,18 +57,21 @@
 <script>
 import { ArrowRight, InfoFilled } from "@element-plus/icons-vue";
 import { computed, ref } from "vue";
-import EditProduct from "../../components/admin/EditProduct.vue";
 import {
   deleteProduct,
   getProductsFilter,
 } from "../../services/ProductRepository";
+import { useBreadCurmb } from "../../stores/breadcrumb.js";
+import { useProductEdit } from "../../stores/productEdit";
+
 export default {
   components: {
     ArrowRight,
-    EditProduct,
     InfoFilled,
   },
   setup() {
+    const breadcrumb = useBreadCurmb();
+    breadcrumb.updateTitle("Quản lý sản phẩm");
     const search = ref("");
     const filterTableData = computed(() =>
       tableData.value.filter(
@@ -72,7 +80,7 @@ export default {
           data.name.toLowerCase().includes(search.value.toLowerCase())
       )
     );
-
+    const product = useProductEdit();
     const pageSize = ref(5);
     const pageNumber = ref(1);
     const tableData = ref([]);
@@ -82,14 +90,13 @@ export default {
         (data) => {
           tableData.value = data.items;
           pageCount.value = data.metadata.pageCount * pageSize.value;
-          console.log(tableData.value);
         }
       );
     };
     getData();
 
-    const handleEdit = (index, row) => {
-      console.log(index, row);
+    const handleEdit = (data) => {
+      product.updateProduct(data);
     };
     const handleDelete = (index, row) => {
       deleteProduct(row.id).then(() => {
@@ -108,6 +115,7 @@ export default {
     };
 
     return {
+      InfoFilled,
       cancelEvent,
       updateTable,
       handleCurrentChange,

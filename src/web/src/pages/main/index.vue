@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="5"
         ><div class="grid-content ep-bg-purple" />
-        <side-bar class="sider-bar" />
+        <side-bar />
       </el-col>
       <el-col :span="17"
         ><div class="grid-content ep-bg-purple" />
