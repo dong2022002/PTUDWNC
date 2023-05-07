@@ -15,7 +15,6 @@ namespace Shop.Core.Entities
 		public DateTime? ModifiedAt { get; set; }
         public int UserId { get; set; }
         public int PaymentId { get; set; }
-
         public PaymentDetail PaymentDetail { get; set; }
         public User User { get; set; }
 

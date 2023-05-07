@@ -1,4 +1,4 @@
-import { ApiUrl, get_api } from "./Method";
+import { ApiUrl, delete_api, get_api, post_api, put_api } from "./Method";
 export async function getFeaturedProducts(limit = 4) {
   return get_api(ApiUrl + `/api/products/featured/${limit}`);
 }
@@ -19,16 +19,36 @@ export async function getProductById(id) {
   return get_api(ApiUrl + `/api/products/${id}`);
 }
 
+export async function getFilterCategoriesDiscount() {
+  return get_api(ApiUrl + `/api/products/get-filter`);
+}
+
 export async function getProductsFilter(
   keyword = "",
   categorySlug = "",
   pageSize = 10,
-  pageNumber = 1
+  pageNumber = 1,
+  sortColumn = "",
+  sortOrder = "desc"
 ) {
   let url = new URL(ApiUrl + `/api/products`);
   keyword !== "" && url.searchParams.append("Keyword", keyword);
   categorySlug !== "" && url.searchParams.append("CategorySlug", categorySlug);
+  sortColumn !== "" && url.searchParams.append("SortColumn", sortColumn);
+  sortOrder !== "" && url.searchParams.append("SortOrder", sortOrder);
   url.searchParams.append("PageSize", pageSize);
   url.searchParams.append("PageNumber", pageNumber);
   return get_api(url.href);
+}
+
+export async function addOrUpdateProduct(formData, id) {
+  if (id > 0) {
+    return await put_api(ApiUrl + `/api/products`, formData);
+  } else {
+    return await post_api(ApiUrl + `/api/products`, formData);
+  }
+}
+
+export async function deleteProduct(id) {
+  return await delete_api(ApiUrl + `/api/products/${id}`);
 }

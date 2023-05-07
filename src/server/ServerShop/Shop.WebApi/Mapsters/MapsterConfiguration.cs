@@ -1,7 +1,9 @@
 ﻿using Mapster;
+using Shop.Core.dto;
 using Shop.Core.DTO;
 using Shop.Core.Entities;
 using Shop.WebApi.Models.Category;
+using Shop.WebApi.Models.DiscountModel;
 using Shop.WebApi.Models.Products;
 
 namespace Shop.WebApi.Mapsters
@@ -16,8 +18,12 @@ namespace Shop.WebApi.Mapsters
 					.Ignore(dest => dest.ProductCategory.Products)
 					.Ignore(dest => dest.Discount.Products);
 
+			config.NewConfig<CategoryFilterModel, CategoryQuery>();
+			config.NewConfig<ProductCategory, CategoryDto>();
 
-			config.NewConfig<ProductCategory, ProductCategoryDto>();
+
+			config.NewConfig<DiscountFilterModel, DiscountQuery>();
+			config.NewConfig<Discount, DiscountDto>();
 
 
 		}

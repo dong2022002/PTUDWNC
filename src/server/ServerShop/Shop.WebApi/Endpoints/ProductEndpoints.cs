@@ -17,6 +17,8 @@ using Shop.Core.DTO;
 using Mapster;
 using Shop.Services.Extensions;
 using Microsoft.IdentityModel.Tokens;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Shop.WebApi.Endpoints
 {
@@ -47,6 +49,10 @@ namespace Shop.WebApi.Endpoints
 			routerGroupBuilder.MapGet("/{id:int}", GetProductDetails)
 				.WithName("GetProductDetails")
 				.Produces<ApiResponse<ProductsDto>>();
+
+			routerGroupBuilder.MapGet("get-filter", GetFilter)
+				.WithName("GetFilter")
+				.Produces<ApiResponse<ProductDataFilter>>();
 
 
 			routerGroupBuilder.MapPost(
@@ -151,6 +157,26 @@ namespace Shop.WebApi.Endpoints
 			return Results.Ok(ApiResponse.Success(paginationResult));
 		}
 
+		private static async Task<IResult> GetFilter(
+		ICategoryRepository categoryRepository,
+		IDiscountRepository discountRepository)
+		{
+			ProductDataFilter productDataFilter = new ProductDataFilter();
+			var categories = await categoryRepository.GetCategoriesAsync();
+			var discounts = await discountRepository.GetDiscountsAsync();
+			productDataFilter.CategoryList = categories.Select(a => new SelectListItem()
+			{
+				Text = a.Name,
+				Value = a.Id.ToString()
+			});
+			productDataFilter.DiscountList = discounts.Select(a => new SelectListItem()
+			{
+				Text = a.Name,
+				Value = a.Id.ToString()
+			});
+			return Results.Ok(ApiResponse.Success(productDataFilter));
+		}
+
 
 		private static async Task<IResult> AddProduct(
 			HttpContext context,
@@ -186,6 +212,7 @@ namespace Shop.WebApi.Endpoints
 			product.ProductCategoryId = model.ProductCategoryId;
 			product.DiscountId = model.DiscountId;
 			product.Price = model.Price;
+			product.Quantity = model.Quantity;
 			product.Slug = model.Name.GenerateSlug();
 			product.Description = model.Description;
 			if (model.Id > 0)
@@ -215,7 +242,7 @@ namespace Shop.WebApi.Endpoints
 			await productRepository.AddOrUpdateProductsAsync(product);
 
 			return Results.Ok(ApiResponse.Success(
-				"Product is Updated", HttpStatusCode.NoContent));
+				"Request success", HttpStatusCode.NoContent));
 		}
 		private static async Task<IResult> DeleteProduct(
 			int id,

@@ -1,12 +1,13 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import admin from './admin.js';
-import user from './user.js';
-import Page404 from './404.js';
-const routes = [...admin, ...user, ...Page404];
+import { createRouter, createWebHistory } from "vue-router";
+import Page404 from "./404.js";
+import admin from "./admin.js";
+import LoginAdmin from "./loginAdmin.js";
+import user from "./user.js";
+const routes = [...admin, ...user, ...Page404, ...LoginAdmin];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
+  history: createWebHistory(),
+  routes,
 });
 
 export default router;

@@ -1,27 +1,37 @@
 <template>
   <el-menu
-    router="true"
+    :router="true"
     :default-active="index"
     class="el-menu"
     @select="handleSelect"
     text-color="#ced2cc"
     background-color="#545c64"
-    active-text-color="#0091d5"
+    active-text-color="#000"
   >
-    <div class="container-logo">LOGO</div>
+    <div class="container-logo">
+      <img src="../../../public/vite.svg" alt="" />
+    </div>
     <el-menu-item route="/admin/products" index="products">
       <el-icon><box /></el-icon>
       <span>Sản phẩm</span>
+    </el-menu-item>
+    <el-menu-item route="/admin/category" index="categories">
+      <el-icon><box /></el-icon>
+      <span>Danh mục</span>
+    </el-menu-item>
+    <el-menu-item route="/admin/discount" index="discounts">
+      <el-icon><box /></el-icon>
+      <span>Giảm giá</span>
     </el-menu-item>
     <el-menu-item route="/admin/users" index="users">
       <el-icon><avatar /></el-icon>
       <span>Khách hàng</span>
     </el-menu-item>
-    <el-menu-item index="cart">
+    <el-menu-item route="/admin/cart" index="cart">
       <el-icon><shopping-cart /></el-icon>
       <span>Đơn hàng</span>
     </el-menu-item>
-    <el-menu-item index="settings">
+    <el-menu-item route="/admin/settings" index="settings">
       <el-icon><setting /></el-icon>
       <span>Cài đặt</span>
     </el-menu-item>
@@ -29,39 +39,38 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useMenu } from '../../stores/use-menu-admin.js'
-import { ref } from 'vue'
 import {
+  Avatar,
   Box,
   Menu as IconMenu,
-  ShoppingCart,
   Setting,
-  Avatar
-} from '@element-plus/icons-vue'
+  ShoppingCart,
+} from "@element-plus/icons-vue";
+import { storeToRefs } from "pinia";
+import { defineComponent, ref } from "vue";
+import { useMenu } from "../../stores/use-menu-admin.js";
 export default defineComponent({
   components: {
     Box,
     IconMenu,
     ShoppingCart,
     Setting,
-    Avatar
+    Avatar,
   },
   setup() {
-    const menu = useMenu()
-    const index = ref('products')
+    const menu = useMenu();
+    const index = ref("products");
     const handleSelect = (key) => {
-      menu.onSelectedKeys(key)
-    }
-    return { index, handleSelect, ...storeToRefs(menu) }
-  }
-})
+      menu.onSelectedKeys(key);
+    };
+    return { index, handleSelect, ...storeToRefs(menu) };
+  },
+});
 </script>
 
 <style scoped>
 .el-menu {
-  min-height: 100vh;
+  height: 100%;
   border-right: 0 !important;
 }
 .el-sub-menu {

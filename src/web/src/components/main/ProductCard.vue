@@ -59,7 +59,8 @@ export default {
   border-radius: 12px;
   margin: auto;
   width: 120px;
-  object-fit: cover;
+  height: 140px;
+  object-fit: contain;
   display: block;
 }
 .more {

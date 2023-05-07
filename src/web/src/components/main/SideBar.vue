@@ -2,22 +2,25 @@
   <div class="siderbar">
     <div class="h6">Nổi bật</div>
     <el-menu
-      router="true"
+      :router="true"
       default-active="feature-product"
       class="el-menu"
-      @select="handleSelect"
+      @select="handleSelectOutStanding"
       background-color="#fff"
       active-text-color="#303133"
     >
-      <el-menu-item route="/admin/products" index="productsfeatured">
+      <el-menu-item route="/products/featured" index="ViewCount">
         <el-icon><box /></el-icon>
         <span>Sản phẩm Nổi bật</span>
       </el-menu-item>
-      <el-menu-item route="/admin/users" index="users">
+      <el-menu-item route="/products/newest-products" index="CreatedAt">
         <el-icon><goods /></el-icon>
         <span>Hàng mới về</span>
       </el-menu-item>
-      <el-menu-item index="cart">
+      <el-menu-item
+        route="/products/discount-products"
+        index="Discount.DiscountPercent"
+      >
         <el-icon><shopping-cart /></el-icon>
         <span>Giá ưu đãi</span>
       </el-menu-item>
@@ -26,7 +29,7 @@
   <div class="siderbar mb-4">
     <div class="h6">Danh mục</div>
     <el-menu
-      router="true"
+      :router="true"
       class="el-menu"
       @select="handleSelect"
       background-color="#fff"
@@ -66,11 +69,15 @@ export default defineComponent({
         listCategories.data = data;
       }
     });
+    const handleSelectOutStanding = (key, keyPath) => {
+      filter.updateCategorySlug("");
+      filter.updateSortColumn(keyPath[0]);
+    };
     const handleSelect = (key, keyPath) => {
-      console.log();
+      filter.updateSortColumn("");
       filter.updateCategorySlug(keyPath[0]);
     };
-    return { index, listCategories, handleSelect };
+    return { index, listCategories, handleSelect, handleSelectOutStanding };
   },
 });
 </script>
